@@ -94,7 +94,7 @@ a:hover
 	font-size: 18px;
 	font-weight: bold;
 	color: #999;
-	letter-spacing: 2px;
+	letter-spacing: 0px;
 	margin:	0;
 	background-color: transparent;
 }
@@ -104,7 +104,7 @@ a:hover
 	font-size: 18px;
 	font-weight: bold;
 	color: #990000;
-	letter-spacing: 2px;
+	letter-spacing: 0px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	background-color: transparent;
@@ -269,7 +269,7 @@ form
 	font-family: Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
 	font-size: 11px;
 	font-weight: normal;
-	letter-spacing: .1em;
+	/*letter-spacing: .1em;*/
 	color: #333;
 	margin-top: 2px;
 	margin-bottom: 2px;
@@ -313,7 +313,7 @@ form
 	border-left:	1px solid #989AB6;
 	border-right:	1px solid #434777;
 	border-bottom:	1px solid #434777;
-	letter-spacing: .1em;
+	/*letter-spacing: .1em;*/
 	padding: 1px 3px 2px 3px;
 	margin:	0;
 	background-color: #6C73B4;

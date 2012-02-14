@@ -631,7 +631,7 @@ elseif ($v == '6')
 	//添加管理员
 	$siteFounder	=	$_SESSION['default_manager_account'];
 
-	$sql1	=	"INSERT INTO `{$db_config['db_prefix']}user` (`uid`, `email`, `password`, `uname`, `sex`, `province`, `city`, `location`, `admin_level`, `commend`, `is_active`, `is_init`, `is_synchronizing`, `cTime`, `identity`, `score`,`myop_menu_num`,`api_key`,`domain`) VALUES (".$admin_id.", '".$siteFounder['email']."', '".$siteFounder['password']."', '管理员', '0', '0', '0', NULL, '1', NULL, '1', '1', '0', ".time().", '1', '0', '10', NULL, '');";
+	$sql1	=	"INSERT INTO `{$db_config['db_prefix']}user` (`uid`, `email`, `password`, `uname`, `sex`, `province`, `city`, `location`, `admin_level`, `commend`, `is_active`, `is_init`, `is_synchronizing`, `cTime`, `identity`, `score`,`myop_menu_num`,`api_key`,`domain`) VALUES (".$admin_id.", '".$siteFounder['email']."', '".$siteFounder['password']."', 'MrDiep', '0', '0', '0', NULL, '1', NULL, '1', '1', '0', ".time().", '1', '0', '10', NULL, '');";
 
 	if( mysql_query($sql1) ){
 		echo '<p>'.$i_message['create_founderpower_success'].'... <span class="blue">OK</span></p>';
@@ -649,7 +649,7 @@ elseif ($v == '6')
 	}
 
 	//将管理员加入“管理员”用户组
-	$sql_user_group	=	"INSERT INTO `{$db_config['db_prefix']}user_group_link` (`user_gorup_link_id`,`user_group_id`,`user_group_title`,`uid`) VALUES ('1', '1', '管理员', ".$admin_id.");";
+	$sql_user_group	=	"INSERT INTO `{$db_config['db_prefix']}user_group_link` (`user_gorup_link_id`,`user_group_id`,`user_group_title`,`uid`) VALUES ('1', '1', 'Administrator', ".$admin_id.");";
 	if( mysql_query($sql_user_group) ){
 
 	} else {
@@ -669,7 +669,7 @@ elseif ($v == '6')
 		fopen('install.lock', 'w');
 		@unlink('../index.html');
 	}else{
-		echo '请重新安装';
+		echo 'Vui lòng cài đặt lại';
 	}
 ?>
 </div>

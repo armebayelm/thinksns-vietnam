@@ -5,14 +5,14 @@ $basedir = '.';
 $auto = 1;
 
 checkdir($basedir);
-echo '<br />验证完毕！';
+echo '<br />Đã xác minh xong';
 function checkdir($basedir){
 	if($dh = opendir($basedir)) {
 		while(($file = readdir($dh)) !== false) {
 			if($file != '.' && $file != '..' && $file != '.svn'){
 				if(!is_dir($basedir."/".$file)) {
 					if(checkBOM("$basedir/$file")==1){
-						echo "filename: $basedir/$file <font color=red>存在，自动删除.</font> <br>";
+						echo "filename: $basedir/$file <font color=red>tồn tại, đã tự động xóa.</font> <br>";
 					}
 				}else{
 					$dirname = $basedir."/".$file;
@@ -39,7 +39,7 @@ function checkBOM($filename) {
 			return 0;
 		}
 	}
-	else return("不存在");
+	else return("Không tồn tại");
 }
 
 function rewrite($filename, $data) {

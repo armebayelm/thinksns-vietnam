@@ -555,8 +555,8 @@ CREATE TABLE `ts_system_data` (
 /*!40000 ALTER TABLE `ts_system_data` DISABLE KEYS */;
 INSERT INTO `ts_system_data` (`uid`,`list`,`key`,`value`,`mtime`)
 VALUES
-	(0,'siteopt','site_name','s:8:\"ThinkSNS\";','2010-11-29 17:40:14'),
-	(0,'siteopt','site_slogan','s:21:\"社会化动力平台\";','2010-11-29 17:40:14'),
+	(0,'siteopt','site_name','s:36:\"Mạng xã hội thinkPHP Việt Nam\";','2010-11-29 17:40:14'),
+	(0,'siteopt','site_slogan','s:33:\"Tôi là thế giới với bạn\";','2010-11-29 17:40:14'),
 	(0,'siteopt','site_closed','i:0;','2010-11-29 17:40:14'),
 	(0,'siteopt','site_verify','a:1:{i:0;s:8:\"register\";}','2010-11-29 17:40:14'),
 	(0,'siteopt','site_user_domain_on','s:1:\"1\";','2010-12-20 18:06:59'),
@@ -576,9 +576,9 @@ VALUES
 	(0,'inviteset','__hash__','s:32:\"de6fa0dbb82ebd33d9d824d757332c1e\";','2010-11-26 11:51:05'),
 	(0,'default','default','15','2010-11-19 11:57:11'),
 	(0,'siteopt','site_closed_reason','s:0:\"\";','2010-11-29 17:40:14'),
-	(0,'siteopt','site_header_keywords','s:12:\"ThinkSNS|SNS\";','2010-11-29 17:40:14'),
-	(0,'siteopt','site_header_description','s:19:\"ThinkSNS|SNS|Sociax\";','2010-11-29 17:40:14'),
-	(0,'siteopt','site_icp','s:57:"智士软件（北京）有限公司 京ICP备04000001号";','2010-11-29 17:40:14'),
+	(0,'siteopt','site_header_keywords','s:77:\"Mạng xã hội|Mạng thông tin trực tuyến|Mạng sinh viên|Mạng IT\";','2010-11-29 17:40:14'),
+	(0,'siteopt','site_header_description','s:77:\"Mạng xã hội|Mạng thông tin trực tuyến|Mạng sinh viên|Mạng IT\";','2010-11-29 17:40:14'),
+	(0,'siteopt','site_icp','s:39:\"Đang chờ cấp phép của bộ VHTT\"','2010-11-29 17:40:14'),
 	(0,'siteopt','site_anonymous','s:1:\"1\";','2010-11-29 17:40:14'),
 	(0,'siteopt','site_anonymous_square','s:1:\"1\";','2010-11-29 17:40:14'),
 	(0,'siteopt','site_anonymous_search','s:1:\"0\";','2010-11-29 17:40:14'),
@@ -588,7 +588,7 @@ VALUES
 	(0,'attach','attach_allow_extension','s:59:\"jpg,gif,png,jpeg,bmp,zip,rar,doc,xls,ppt,docx,xlsx,pptx,pdf\";','2010-11-29 17:41:15'),
 	(0,'attach','__hash__','s:32:\"3d1ba92bca03cacb92bb32379f880356\";','2010-11-29 17:41:15'),
 	(0,'announcement','is_open','s:1:\"1\";','2010-12-13 15:20:06'),
-	(0,'announcement','content','s:20:"欢迎使用ThinkSNS";','2010-12-13 15:20:06');
+	(0,'announcement','content','s:57:\"Chào mừng bạn đến với mạng xã hội ThinkSNS\";','2010-12-13 15:20:06');
 
 /*!40000 ALTER TABLE `ts_system_data` ENABLE KEYS */;
 

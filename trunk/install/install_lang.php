@@ -4,113 +4,119 @@ if (!defined('THINKSNS_INSTALL'))
 	exit ('Access Denied');
 }
 
-$i_message['install_lock'] = '您已安装过ThinkSNS ' . $_TSVERSION . '，如果需要重新安装，请先删除install目录下的install.lock文件';
-$i_message['install_title'] = 'ThinkSNS ' . $_TSVERSION . ' 安装向导';
-$i_message['install_wizard'] = '安装向导';
-$i_message['install_warning'] = '<strong>注意 </strong>这个安装程序仅仅用在你首次安装ThinkSNS。如果你已经在使用 ThinkSNS 或者要更新到一个新版本，请不要运行这个安装程序。';
-$i_message['install_intro'] = '<h4>安装须知</h4><p>一、运行环境需求：PHP(5.2.0+)+MYSQL(4.1+)</p><p>二、安装步骤：<br /><br />1、使用ftp工具以二进制模式，将该软件包里的 thinksns 目录及其文件上传到您的空间，假设上传后目录仍旧为 thinksns。<br /><br />2、如果您使用的是Linux 或 Freebsd 服务器，先确认以下目录或文件属性为 (777) 可写模式。<br /><br />目录: data<br />目录: _runtime<br />目录: install<br />文件: config.inc.php<br />文件: define.inc.php<br />3、运行 http://yourwebsite/thinksns/install/install.php 安装程序，填入安装相关信息与资料，完成安装！<br />4、运行 http://yourwebsite/thinksns/cleancache.php 清除系统缓存文件！<br />5、运行 http://yourwebsite/thinksns/index.php 开始体验ThinkSNS！</p>';
-$i_message['install_start'] = '开始安装ThinkSNS';
-$i_message['install_license_title'] = '安装许可协议';
-$i_message['install_license'] = '版权所有 (C) 2008-'.date('Y').'，ThinkSNS.com 保留所有权利。
+$i_message['install_lock'] = 'Hệ thống phát hiện ThinkSNS ' . $_TSVERSION . ', đã được cài đặt, nếu bạn muốn cài đặt lại, hãy xóa tệp tin install.lock trong thư mục install';
+$i_message['install_title'] = 'ThinkSNS ' . $_TSVERSION . ' thuật sĩ cài đặt';
+$i_message['install_wizard'] = 'Thuật sĩ cài đặt';
+$i_message['install_warning'] = '<strong>Chú ý </strong>Đây là trang được sử dụng trong lần đầu tiên khi bạn truy cập để cài đặt, nếu bạn muốn update hãy truy cập thư mục update';
+$i_message['install_intro'] = '<h4>Ghi chú cài đặt </h4>
+<p>I, Yêu cầu hệ thống: PHP(5.2.0+)+MYSQL(4.1+)</p>
+<p>II, Các bước cài đặt
+<br /><br />
+1, Sử dụng trình FTP để upload toàn bộ tệp tin lên máy chủ.
+<br /><br />
+2, Nếu bạn sử dụng hđh Unix, hãy thiết lập CHMOD thành 777 với các thư mục,tệp tin sau
+<br /><br />
+Thư mục: data
+<br />
+Thư mục: _runtime
+<br />
+Thư mục: install
+<br />
+Tệp tin: config.inc.php
+<br />
+Tệp tin: define.inc.php
+<br />
+3, Địa chỉ cài đặt là: http://yourdomain.ltd/install/install.php
+<br />
+4, Để xóa cache vào: ttp://yourwebsite/thinksns/cleancache.php
+<br />
+5, Trang chủ của website là ttp://yourwebsite/thinksns/index.php
+</p>';
+$i_message['install_start'] = 'Bắt đầu cài đặt';
+$i_message['install_license_title'] = 'Điều khoản sử dụng';
+$i_message['install_license'] = 'Bản quyền thuộc về ThinkSNS 2008-'.date('Y').'.
 
-ThinkSNS是由ThinkSNS项目组独立开发的SNS程序，基于PHP脚本和MySQL数据库。本程序源码开放的，任何人都可以从互联网上免费下载，并可以在不违反本协议规定的前提下进行使用而无需缴纳程序使用费。
-
-官方网址： www.ThinkSNS.com 交流社区： t.ThinkSNS.com
-
-为了使你正确并合法的使用本软件，请你在使用前务必阅读清楚下面的协议条款：
-
-一、本授权协议适用且仅适用于ThinkSNS任何版本，ThinkSNS官方拥有对本授权协议的最终解释权和修改权。
-
-二、协议许可的权利和限制
-1、您可以在完全遵守本最终用户授权协议的基础上，将本软件应用于非商业用途，而不必支付软件版权授权费用，但我们也不承诺对个人用户提供任何形式的技术支持。
-2、您可以在协议规定的约束和限制范围内修改ThinkSNS源代码或界面风格以适应您的网站要求，但不可以公开对外发布。
-3、您拥有使用本软件构建的网站全部内容所有权，并独立承担与这些内容的相关法律义务。
-4、未经商业授权，不得将本软件用于商业用途(企业网站或以盈利为目的经营性网站)，否则我们将保留追究的权力。
-
-三、免责声明
-1、本软件及所附带的文件是作为不提供任何明确的或隐含的赔偿或担保的形式提供的。
-2、用户出于自愿而使用本软件，您必须了解使用本软件的风险，任何情况下，程序的质量风险和性能风险完全由您承担。有可能证实该程序存在漏洞，您需要估算与承担所有必需服务，恢复，修正，甚至崩溃所产生的代价！在尚未购买产品技术服务之前，我们不承诺对免费用户提供任何形式的技术支持、使用担保，也不承担任何因使用本软件而产生问题的相关责任。
-3、请务必仔细阅读本授权协议，在您同意授权协议的全部条件后，即可继续ThinkSNS的安装。即：您一旦开始安装ThinkSNS，即被视为完全同意本授权协议的全部内容，如果出现纠纷，我们将根据相关法律和协议条款追究责任。
+Nội dung thông tin bản quyền sẽ được update sau
 
 ';
-$i_message['install_agree'] = '我已看过并同意安装许可协议';
-$i_message['install_disagree'] = '不同意';
-$i_message['install_disagree_license'] = '您必须在同意授权协议的全部条件后，方可继续ThinkSNS的安装';
-$i_message['install_prev'] = '上一步';
-$i_message['install_next'] = '下一步';
-$i_message['dirmod'] = '目录和文件的写权限';
-$i_message['install_dirmod'] = '目录和文件是否可写，如果发生错误，请更改文件/目录属性 777';
-$i_message['install_env'] = '服务器配置';
-$i_message['php_os'] = '操作系统';
-$i_message['php_version'] = 'PHP版本';
-$i_message['file_upload'] = '附件上传';
-$i_message['support'] = '支持';
-$i_message['unsupport'] = '不支持';
-$i_message['php_extention'] = 'PHP扩展';
-$i_message['php_extention_unload_gd'] = '您的服务器没有安装这个PHP扩展：gd';
-$i_message['php_extention_unload_mbstring'] = '您的服务器没有安装这个PHP扩展：mbstring';
-$i_message['php_extention_unload_mysql'] = '您的服务器没有安装这个PHP扩展：mysql';
-$i_message['php_extention_unload_curl'] = '您的服务器没有安装这个PHP扩展：curl';
-$i_message['mysql'] = 'MySQL数据库';
-$i_message['mysql_unsupport'] = '您的服务器不支持MYSQL数据库，无法安装ThinkSNS。';
-$i_message['install_setting'] = '数据库资料与管理员账号设置';
-$i_message['install_mysql'] = '数据库配置';
-$i_message['install_mysql_host'] = '数据库服务器';
-$i_message['install_mysql_host_intro'] = '格式：地址(:端口)，一般为 localhost';
-$i_message['install_mysql_username'] = '数据库用户名';
-$i_message['install_mysql_password'] = '数据库密码';
-$i_message['install_mysql_name'] = '数据库名';
-$i_message['install_mysql_prefix'] = '表名前缀';
-$i_message['install_mysql_prefix_intro'] = '同一数据库安装多个ThinkSNS时可改变默认值';
-$i_message['site_url'] = ' 站点地址';
+$i_message['install_agree'] = 'Tôi đã đọc và đồng ý với điều khoản';
+$i_message['install_disagree'] = 'Không đồng ý';
+$i_message['install_disagree_license'] = 'Bạn phải đồng ý với điều khoản sử dụng thì mới có thể cài đặt';
+$i_message['install_prev'] = 'Bước trước';
+$i_message['install_next'] = 'Tiếp tục';
+$i_message['dirmod'] = 'Kiểm tra quyền thư mục,tệp';
+$i_message['install_dirmod'] = 'Các thư mục và tệp phải được cấp quyền ghi, nếu có lỗi phát sinh, vui lòng đổi CHMOD thành 777';
+$i_message['install_env'] = 'Cấu hình máy chủ';
+$i_message['php_os'] = 'Hệ điều hành';
+$i_message['php_version'] = 'Phiên bản';
+$i_message['file_upload'] = 'Upload max';
+$i_message['support'] = 'Hỗ trợ';
+$i_message['unsupport'] = 'Không hỗ trợ';
+$i_message['php_extention'] = 'PHP Extension';
+$i_message['php_extention_unload_gd'] = 'Phần mở rộng php: gd';
+$i_message['php_extention_unload_mbstring'] = 'Phần mở rộng php: mbstring';
+$i_message['php_extention_unload_mysql'] = 'Phần mở rộng php: mysql';
+$i_message['php_extention_unload_curl'] = 'Phần mở rộng php: curl';
+$i_message['mysql'] = 'MySQL database';
+$i_message['mysql_unsupport'] = 'Máy chủ của bạn không hỗ trợ MySQL, không thể cài đặt';
+$i_message['install_setting'] = 'Thiết lập thông số kết nối, tài khoản quản trị';
+$i_message['install_mysql'] = 'Cấu hình cơ sở dữ liệu';
+$i_message['install_mysql_host'] = 'Máy chủ dữ liệu';
+$i_message['install_mysql_host_intro'] = 'Địa chỉ máy chủ (:port) thường là localhost';
+$i_message['install_mysql_username'] = 'Tài khoản db';
+$i_message['install_mysql_password'] = 'Mật khẩu db';
+$i_message['install_mysql_name'] = 'Tên db';
+$i_message['install_mysql_prefix'] = 'Tiền tố';
+$i_message['install_mysql_prefix_intro'] = 'Nếu bạn muốn cài đặt website khác, cùng trong 1 csdl';
+$i_message['site_url'] = ' Địa chỉ website';
 $i_message['site_url_intro'] = '';
-$i_message['founder'] = '超级管理员资料';
-$i_message['install_founder_name'] = '管理员账号';
-$i_message['install_founder_password'] = '密码';
-$i_message['install_founder_rpassword'] = '重复密码';
-$i_message['install_founder_email'] = '电子邮件';
-$i_message['install_mysql_host_empty'] = '数据库服务器不能为空';
-$i_message['install_mysql_username_empty'] = '数据库用户名不能为空';
-$i_message['install_mysql_name_empty'] = '数据库名不能为空';
-$i_message['install_founder_name_empty'] = '超级管理员用户名不能为空';
-$i_message['install_founder_password_length'] = '超级管理员密码必须大于6位';
-$i_message['install_founder_rpassword_error'] = '两次输入管理员密码不同';
-$i_message['install_founder_email_empty'] = '超级管理员Email不能为空';
-$i_message['mysql_invalid_configure'] = '数据库配置信息不完整';
-$i_message['mysql_invalid_prefix'] = '您指定的数据表前缀包含点字符(".")，请返回修改。';
-$i_message['forbidden_character'] = '用户名包含非法字符';
-$i_message['founder_invalid_email'] = '电子邮件格式不正确';
-$i_message['founder_invalid_configure'] = '超级管理员信息不完整';
-$i_message['founder_invalid_password'] = '密码长度必须大于6位';
-$i_message['founder_invalid_rpassword'] = '两次输入的密码不一致';
-$i_message['founder_intro'] = '网站创始人，拥有最高权限';
-$i_message['config_log_success']	= '数据库配置信息写入完成';
-$i_message['define_log_success']	= '网站全局配置信息写入完成';
-$i_message['config_read_failed'] = '数据库配置文件写入错误，请检查config.inc.php文件是否存在或属性是否为777';
-$i_message['define_read_failed'] = '网站全局配置文件写入错误，请检查define.inc.php文件是否存在或属性是否为777';
-$i_message['error'] = '错误';
-$i_message['database_errno_2003'] = '无法连接数据库，请检查数据库是否启动，数据库服务器地址是否正确';
-$i_message['database_errno_1045'] = '无法连接数据库，请检查数据库用户名或者密码是否正确';
-$i_message['database_errno_1044'] = '无法创建新的数据库，请检查数据库名称填写是否正确';
-$i_message['database_errno_1064'] = 'SQL执行错误，请检查数据库名称填写是否正确';
-$i_message['database_errno'] = '程序在执行数据库操作时发生了一个错误，安装过程无法继续进行。';
-$i_message['configure_read_failed'] = '数据库配置失败';
-$i_message['mysql_version_402'] = '您的 MYSQL 版本低于 4.1.0，安装无法继续进行！';
-$i_message['thinksns_rebuild'] = '数据库中已经安装过 ThinkSNS，继续安装会清空原有数据！';
-$i_message['mysql_import_data'] = '点击下一步开始导入数据';
-$i_message['import_processing'] = '导入数据库';
-$i_message['import_processing_error'] = '导入数据库失败';
-$i_message['create_table'] = '创建表';
-$i_message['create_founder'] = '创建超级管理员帐户';
-$i_message['create_founder_success'] = '超级管理员帐户创建成功';
-$i_message['create_founder_error']	= '超级管理员帐户创建失败';
-$i_message['create_founderpower_success'] = '超级管理员权限设置成功';
-$i_message['create_founderpower_error']	= '超级管理员权限设置失败';
-$i_message['create_cache'] = '创建缓存';
-$i_message['create_cache_success'] = '创建缓存成功';
-$i_message['auto_increment'] = '用户的起始ID';
-$i_message['set_auto_increment_success'] = '用户起始ID设置成功';
-$i_message['set_auto_increment_error'] = '用户起始ID设置失败';
-$i_message['install_success'] = '安装成功';
-$i_message['install_success_intro'] = '<p>安装程序执行完毕，请尽快删除整个 install 目录，以免被他人恶意利用。如要重新安装，请删除本目录的 install.lock 文件！</p><p><a href="../index.php">请点击这里开始体验ThinkSNS吧！</a></p>';
-$i_message['install_dbFile_error'] = '数据库文件无法读取，请检查/install/t_thinksns_com.sql是否存在。';
+$i_message['founder'] = 'Thông tin quản trị tối cao';
+$i_message['install_founder_name'] = 'Tài khoản';
+$i_message['install_founder_password'] = 'Mật khẩu';
+$i_message['install_founder_rpassword'] = 'Xác nhận';
+$i_message['install_founder_email'] = 'Email';
+$i_message['install_mysql_host_empty'] = 'Bạn phải nhập địa chỉ máy chủ';
+$i_message['install_mysql_username_empty'] = 'Tên tài khoản không được để trống';
+$i_message['install_mysql_name_empty'] = 'Bạn phải nhập tên cơ sở dữ liệu';
+$i_message['install_founder_name_empty'] = 'Tên tài khoản quản trị không được để trống';
+$i_message['install_founder_password_length'] = 'Mật khẩu quản trị phải nhiều hơn 6 ký tự';
+$i_message['install_founder_rpassword_error'] = 'Mật khẩu xác nhận không trùng khớp!';
+$i_message['install_founder_email_empty'] = 'Địa chỉ email quản trị không được để trống!';
+$i_message['mysql_invalid_configure'] = 'Bạn chưa nhập đầy đủ thông tin kết nối';
+$i_message['mysql_invalid_prefix'] = 'Bạn nhập giá trị tiền tố không hợp lệ (dấu .), hãy sửa lại.';
+$i_message['forbidden_character'] = 'Tên tài khoản có chứa ký tự không hợp lệ';
+$i_message['founder_invalid_email'] = 'Định dạng email không hợp lệ';
+$i_message['founder_invalid_configure'] = 'Bạn chưa nhập đầy đủ thông tin quản trị';
+$i_message['founder_invalid_password'] = 'Chiều dài mật khẩu phải có nhiều hơn 6 ký tự';
+$i_message['founder_invalid_rpassword'] = 'Mật khẩu không trùng khớp';
+$i_message['founder_intro'] = 'Quản trị tối cao, có quyền cao nhất';
+$i_message['config_log_success']	= 'Lưu thông tin cấu hình kết nối thành công';
+$i_message['define_log_success']	= 'Lưu thông tin cấu hình chung website thành công';
+$i_message['config_read_failed'] = 'Lưu thông tin kết nối không thành công, vui lòng kiếm tra tệp config.inc.php xem đã đặt CHMOD 777 chưa';
+$i_message['define_read_failed'] = 'Lưu thông tin cấu hình chung hệ thống không thành công, vui lòng kiểm tra tệp define.inc.php';
+$i_message['error'] = 'Lỗi';
+$i_message['database_errno_2003'] = 'Không thể kết nối tới csdl, vui lòng kiểm tra lại thông số máy chủ';
+$i_message['database_errno_1045'] = 'Không thể kết nối tới csdl, vui lòng kiểm tra lại tài khoản, mật khẩu dữ liệu';
+$i_message['database_errno_1044'] = 'Không thể tạo db mới, hãy kiểm tra lại tên dữ liệu';
+$i_message['database_errno_1064'] = 'Thực thi truy vấn SQL lỗi, hãy kiểm tra lại tên db';
+$i_message['database_errno'] = 'Trong quá trình thực thi truy vấn tới csdl có lỗi phát sinh, không thể tiếp tục cài đặt.';
+$i_message['configure_read_failed'] = 'Cấu hình csdl không thành công';
+$i_message['mysql_version_402'] = 'Phiên bản MySQL của bạn thấp hơn 4.1.0, không thể cài đặt';
+$i_message['thinksns_rebuild'] = 'Có dữ liệu cũ đã tồn tại, nếu bạn tiếp tục cài đặt ThinkSNS sẽ xóa toàn bộ dữ liệu cũ';
+$i_message['mysql_import_data'] = 'Nhấn tiếp tục để bắt đầu import dữ liệu';
+$i_message['import_processing'] = 'Import dữ liệu';
+$i_message['import_processing_error'] = 'Có lỗi khi import csdl';
+$i_message['create_table'] = 'Tạo bảng';
+$i_message['create_founder'] = 'Tạo tài khoản quản trị';
+$i_message['create_founder_success'] = 'Tạo tài khoản quản trị thành công';
+$i_message['create_founder_error']	= 'Tạo tài khoản quản trị không thành công';
+$i_message['create_founderpower_success'] = 'Thiết lập đặc quyền tài khoản quản trị thành công';
+$i_message['create_founderpower_error']	= 'Có lỗi phát sinh khi thiết lập đặc quyền quản trị';
+$i_message['create_cache'] = 'Tạo tệp cache';
+$i_message['create_cache_success'] = 'Đã tạo cache thành công';
+$i_message['auto_increment'] = 'Mã ID bắt đầu';
+$i_message['set_auto_increment_success'] = 'Thiết lập id khởi đầu thành công';
+$i_message['set_auto_increment_error'] = 'Có lỗi phát sinh khi thiết lập id khởi đầu';
+$i_message['install_success'] = 'Cài đặt thành công';
+$i_message['install_success_intro'] = '<p>Cài đặt thành công, sau khi cài đặt, bạn hãy xóa thư mục cài đặt để đảm bảo an toàn, nếu bạn muốn cài đặt lại, xóa xóa tệp install.lock</p><p><a href="../index.php">Truy cập trang chủ</a></p>';
+$i_message['install_dbFile_error'] = 'Không thể đọc tệp chứa csdl mẫu, hãy kiểm tra /install/t_thinksns_com.sql.';

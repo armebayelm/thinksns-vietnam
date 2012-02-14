@@ -1,0 +1,80 @@
+<include file="__THEME__/header" />
+<link href="../Public/css/space.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.form.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/weibo.js"></script>
+
+<php>if($mid==-1){</php>
+<!-- 快速注册 -->
+<div class="quick_reg mt10">
+<div class="reg_box">
+	<h2 class="cBlue"><span class="right">已有账号？<a href="###">马上登录</a></span><strong>赶快注册XX微博,和我一起随时随地分享生活的新鲜资讯吧!</strong></h2>
+    <ul style=" width:380px;" class="form_list">
+    	<li class="form_li"><div class="left alR" style="width:85px;">电子邮箱：</div><div class="left" style="width:260px;"><input type="text" class="text" style="width:250px;" name="email" require="true"  /></div></li>
+        <li class="form_li"><div class="left alR" style="width:85px;">&nbsp;</div><div class="left" ><a href="###" class="btn_reg"><strong>快速创建我的微博</strong></a></div></li>
+    </ul>
+    <div class="clew_bg left" style="width:605px;">
+    <div class="clew_bg_arrow_l"></div>
+    	<div class="clew_bg_top"><div></div></div>
+        <div class="clew_bg_con" style="height:70px;">为什么要注册、登录？<br />
+XX微博为每一位用户提供不同的服务，登录才能记住你的喜好。</div>
+        <div class="clew_bg_btm"><div></div></div>
+    </div>
+    <div class="c"></div>
+    </div>
+</div>
+<div class="quick_reg mt10">
+<div class="reg_box">
+	<h2 class="cBlue"><span class="right cG">已有账号？<a href="###">马上登录</a></span><strong>赶快注册XX微博,和我一起随时随地分享生活的新鲜资讯吧!</strong></h2>
+    <ul class="form_list">
+    	<li class="form_li"><div class="left alR" style="width:85px;">电子邮箱：</div><div class="left" style="width:260px;"><input type="text" class="text" style="width:250px;" name="email" require="true"  /></div><div class="left"><span class="ico_cue_ok">&nbsp;</span></div></li>
+        <li class="form_li"><div class="left alR" style="width:85px;">电子邮箱：</div><div class="left" style="width:260px;"><input type="password" class="text" style="width:250px;" name="password" id="password" require="true" value="" datatype="limit"  min="6" max="16" /></div><div class="left"><span  class="ico_cue_no"></span>邮箱格式不对</div></li>
+        <li class="form_li"><div class="left alR" style="width:85px;">电子邮箱：</div><div class="left" style="width:260px;"><input type="password" class="text" style="width:250px;" name="repassword" require="true" value="" datatype="repeat|limit"  min="6" max="16" to="password" />
+                    </div><div class="left"><span></span>邮箱格式不对</div></li>
+        <li class="form_li"><div class="left alR" style="width:85px;">验证码：</div><div class="left" style="width:100px;"><input type="text" class="text" style="width:90px;" name="email" require="true"  /></div><div class="left"><span></span>12341</div></li>
+        <li><div class="left alR" style="width:85px;">&nbsp;</div><div class="left" ><a href="###" class="btn_reg"><strong>快速创建我的微博</strong></a></div></li>
+    </ul>
+    <div class="c"></div>
+</div>
+</div>
+<php>}</php>
+<div class="content_holder">
+<!-- 内容 begin  --> 
+<div class="content no_bg">
+    <div class="wrap_index_r">
+        <include file="../Space/space_right" />
+    </div>
+  <div class="wrap_index_l">
+      <div class="friend_info">
+		  <include file="../Space/userMenu" />
+      </div>
+	  {:Addons::hook('home_space_middle', array('uid'=>$uid))}
+      <div class="tab-menu"><!-- 切换标签 begin  -->
+        <ul>
+          <volist name="space_menu" id="vo">
+          	<li><a id="feed_colleague_item" rel="colleague" class="<if condition="$type eq $key">on</if> feed_item" href="{:U('home/Space/index', array('uid'=>$uid, 'type'=>$key))}"><span>{$vo}</span></a></li>
+          </volist>
+        </ul>
+      </div>
+      <if condition="$list">
+        <div class="feedBox">
+		  {:W('WeiboList', array('mid'=>$mid, 'list'=>$list['data'], 'insert'=>0, 'hidden_user'=>1))}
+        </div>
+        <div class="page">{$list.html}</div>
+      <else />
+        {:Addons::hook('home_space_list', array('uid'=>$uid, 'type'=>$type))}
+      </if>
+      <div class="c"></div>
+  </div>
+  <div class="clear"></div>
+</div>
+</div>
+
+<script>
+var weibo = $.weibo({
+      timeStep : 10000
+});
+</script> 
+{:Addons::hook('weibo_js_plugin')}
+
+<!-- 内容 end --> 
+<include file="__THEME__/footer" /> 

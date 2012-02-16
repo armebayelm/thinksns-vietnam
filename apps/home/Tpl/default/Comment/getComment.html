@@ -6,9 +6,9 @@
        			  <div style="padding-bottom:20px;">
                       <h3 class="tit_Critique lh25 mb5"><span class="right f12px mr5">
                           <?php
-                            $string = sprintf( "<a href=\"javascript:replay( \'%s\',%s )\">回复</a>",$vo['name'],$vo['id'] );
+                            $string = sprintf( "<a href=\"javascript:replay( \'%s\',%s )\">Trả lời</a>",$vo['name'],$vo['id'] );
                             if( $vo['isDelete'] ){
-                                $delete = sprintf("<a href=\"###\" onclick=\"deleteComment(%s,%s)\">删除</a>",$vo['id'],$vo['appid']);
+                                $delete = sprintf("<a href=\"###\" onclick=\"deleteComment(%s,%s)\">Xóa</a>",$vo['id'],$vo['appid']);
                             }
                             ?>
                             <span>{$string}</span><eq name="vo.isDelete" value="1"><span class="ml5">{$delete}</span></eq>
@@ -20,7 +20,7 @@
                     <php>foreach( $vo['subcomment'] as $value ){</php>
                           <?php
                              if( $value['isDelete'] ){
-                                $delete = sprintf("<a href=\"###\" onclick=\"deleteComment(%s,%s)\">删除</a>",$value['id'],$value['appid']);
+                                $delete = sprintf("<a href=\"###\" onclick=\"deleteComment(%s,%s)\">Xóa</a>",$value['id'],$value['appid']);
                             }
                             ?>
                     <div class="sublist pt5 clear" id="comm{$value['id']}">

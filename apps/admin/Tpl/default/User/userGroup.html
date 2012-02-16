@@ -31,7 +31,7 @@
 	    <td>{$vo.ctime|date="Y-m-d H:i",###}</td>
 	    <td>
 			<a href="javascript:void(0);" onclick="edit({$vo['user_group_id']});">编辑</a> 
-	    	<a href="javascript:void(0);" onclick="del({$vo['user_group_id']});">删除</a>  
+	    	<a href="javascript:void(0);" onclick="del({$vo['user_group_id']});">Xóa</a>  
 		</td>
 	  </tr>
   </volist>
@@ -121,7 +121,7 @@
 				
 				ui.success('Đã xóa thành công');
 			}else {
-				ui.error('删除失败');
+				ui.error('Có lỗi phát sinh trong khi xóa');
 			}
 		});
 		});

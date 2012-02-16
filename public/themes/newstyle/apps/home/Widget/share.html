@@ -5,7 +5,7 @@
     <div class="wrap_share">
     	<div class="tit">
 			<session name="userInfo"><span class="right">你正在使用<em>{:getUserSpace($mid)}</em> 帐号</span></session>
-			<nosession name="userInfo"><span class="right"><a href="###" onclick="ui.quicklogin()">登录</a> | <a href="{:U('home/Public/register')}">注册</a></span></nosession>
+			<nosession name="userInfo"><span class="right"><a href="###" onclick="ui.quicklogin()">Đăng nhập</a> | <a href="{:U('home/Public/register')}">Đăng ký</a></span></nosession>
 			<div class="logo_min"><a href="#">&nbsp;</a></div>
 		</div>
         <div class="box_shareFile clearfix">
@@ -14,7 +14,7 @@
               <textarea id="_widget_weibo_content" name="content" class="Share_text">{$content}</textarea>
             </div>
 			<div class="mt10"> 
-                <a href="javascript:void(0)" target_set="_widget_weibo_content" onclick="ui.emotions(this);" class="a52"><img class="icon_add_face_d" src="__THEME__/images/zw_img.gif" />表情</a>
+                <a href="javascript:void(0)" target_set="_widget_weibo_content" onclick="ui.emotions(this);" class="a52"><img class="icon_add_face_d" src="__THEME__/images/zw_img.gif" />Smile</a>
             </div>
             <php>if($type==1 && file_exists('./data/uploads/'.$type_data)) {</php>
             <div class="Share_Preview">

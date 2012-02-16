@@ -38,7 +38,7 @@
         <span id="app_left_count_comment"><gt name="userCount['comment']" value="0">(<font color="red">{$userCount.comment}</font>)</gt></span>
         </a>
         </li>
-        <li><a href="{:U('home/message/index')}" {:getMenuState('message/index')}><span class="ico_side ico_massage"></span>我的私信</a></li>
+        <li><a href="{:U('home/message/index')}" {:getMenuState('message/index')}><span class="ico_side ico_massage"></span>Tin nhắn riêng của tôi</a></li>
         <if condition="Addons::requireHooks('home_index_left_tab')">
             {:Addons::hook('home_index_left_tab', array(&$menu))}
             <volist name="menu" id="vo">

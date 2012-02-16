@@ -33,7 +33,7 @@
     <a href="{:U('wap/Index/doFavorite',array('weibo_id'=>$weibo['weibo_id'],'from'=>ACTION_NAME,'key'=>$keyword,'page'=>$page))}">收藏</a>
     <php>}</php>
     <php>if($weibo['uid'] == $ts['user']['uid']) {</php>
-    <a href="{:U('wap/Index/doDelete',array('weibo_id'=>$weibo['weibo_id'],'from'=>ACTION_NAME,'key'=>$keyword,'page'=>$page))}">删除</a>
+    <a href="{:U('wap/Index/doDelete',array('weibo_id'=>$weibo['weibo_id'],'from'=>ACTION_NAME,'key'=>$keyword,'page'=>$page))}">Xóa</a>
     <php>}</php> 
     <em>{$weibo['ctime']} 来自{$from_type[$weibo['from']]}</em>
 </p>
@@ -52,7 +52,7 @@
 <volist name="comment" id="vo">
 <div class="list">
     <a href="{:U('wap/Index/weibo',array('uid'=>$vo['uid']))}">{$vo['uname']}</a>: {$vo['content']} 
-    <a href="{:U('wap/Index/comment',array('weibo_id'=>$weibo['weibo_id'],'comment_id'=>$vo['comment_id'],'uid'=>$vo['uid']))}">回复</a> 
+    <a href="{:U('wap/Index/comment',array('weibo_id'=>$weibo['weibo_id'],'comment_id'=>$vo['comment_id'],'uid'=>$vo['uid']))}">Trả lời</a> 
     {$vo['ctime']}
 </div>
 </volist>

@@ -33,16 +33,16 @@ $(document).ready(function(){
 	        </div>
             <eq name="login_verify_on" value="1">
             <div class="frm" style="height:29px;*height:auto;"><input name="verify" type="text" class="text alM" title="验证码" id="verify" style="width:50px;height:22px;padding:0 3px;" value="" />
-              &nbsp;<a href="javascript:void(0);" onclick="changeverify()"><img src="{:U('home/Public/verify')}" id="verifyimg" alt="换一张" class="alM" /></a></div>
+              &nbsp;<a href="javascript:void(0);" onclick="changeverify()"><img src="{:U('home/Public/verify')}" id="verifyimg" alt="Đổi hình khác" class="alM" /></a></div>
             </eq>
           <div class="frm">
 	          <label>
 	            <input name="remember" type="checkbox" value="1" />
-	            记住登录状态</label>
-	          <a class="fuc0" href="{:U('home/Public/sendPassword')}">忘记密码？</a>
+	            Ghi nhớ tôi</label>
+	          <a class="fuc0" href="{:U('home/Public/sendPassword')}">Bạn quên mật khẩu?</a>
           </div>
 	        
-	        <div class="frm" style="margin:0px auto; padding:0px; width:85px"><input type="submit" value="登 录" class="logbtn hand" /> </div>
+	        <div class="frm" style="margin:0px auto; padding:0px; width:85px"><input type="submit" value="Đăng nhập" class="logbtn hand" /> </div>
         </form>
         {:Addons::hook('login_input_footer',array('regInfo'=>$regInfo))}
     </div>
@@ -51,7 +51,7 @@ $(document).ready(function(){
 <div class="login_main">
   <div class="colL">
     <div class="tit">
-      <h3>图片微博</h3>
+      <h3>Hình ảnh nổi bật</h3>
     </div>
     <div class="imgrot" id="tw_img_scroll">
       <div id="slides">
@@ -63,7 +63,7 @@ $(document).ready(function(){
 				  <img src="__UPLOAD__/{$vo.type_data.picurl}" width="234" height="221">
 				</a>
 				<div class="imgfnt" style="bottom:0">
-					<p>{$vo.uid|getUserName}：{$vo.content|getShort=10}</p>
+					<p>{$vo.uid|getUserName}:{$vo.content|getShort=10}</p>
 				</div>
 			</div>
 		</volist>
@@ -72,7 +72,7 @@ $(document).ready(function(){
     </div>
    
     <dl class="mobi">
-      <dt>用手机上微博</dt>
+      <dt>Mạng xã hội trên nền điện thoại</dt>
       <dd><a href="http://www.thinksns.com/iPhone.html" target="_blank"><img src="../Public/images/apple.gif" /></a><a href="http://www.thinksns.com/Android.html " target="_blank"><img src="../Public/images/android.gif" /></a><a href="{:U('wap')}" target="_blank"><img src="../Public/images/3G.gif" /></a><a href="{:U('w3g')}" target="_blank"><img src="../Public/images/wap.gif" /></a></dd>
     </dl>
   </div>

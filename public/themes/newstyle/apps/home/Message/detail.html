@@ -6,7 +6,7 @@
       <div class="mainbox_C no_r boxMessage">
       <div class="tab-menu">
         <ul>
-        	<!--<a href="javascript:void(0)" onclick="ui.sendmessage();" class="btn_b right">发私信</a>-->
+        	<!--<a href="javascript:void(0)" onclick="ui.sendmessage();" class="btn_b right">Gửi tin nhắn</a>-->
 			<include file="_tab" />
         </ul>
       </div>
@@ -25,7 +25,7 @@
           <li class="send_msg lineS_btm">
 	             <div class="msgCnt" style="padding-bottom:0;">
                    <div style="padding-left:70px">
-                   <strong>发私信给:</strong>
+                   <strong>Gửi tin nhắn tới:</strong>
                    <volist name="message.to" id="mb"><php>
                     if ($i > 1) echo '、';
                   </php><space uid="mb.member_uid" target="_blank">{uname}</space></volist>
@@ -36,8 +36,8 @@
                      <div class="feed_massage">
 	                     <textarea id="reply_content" style="width:98.5%;_width:98.1%" rows="5" cols="" onblur="this.className='text_massage'" onfocus="this.className='text_massage_on'" class="text_massage"></textarea>
 	                     <div class="mt5">
-	                     	<input type="button" value="发送" class="btn_b mt5 right" onclick="doReply();"/>
-	                     	<a href="javascript:void(0)" target_set="reply_content" onclick="ui.emotions(this)" class="a52"><img class="icon_add_face_d" src="__THEME__/images/zw_img.gif" />表情</a>
+	                     	<input type="button" value="Gửi đi" class="btn_b mt5 right" onclick="doReply();"/>
+	                     	<a href="javascript:void(0)" target_set="reply_content" onclick="ui.emotions(this)" class="a52"><img class="icon_add_face_d" src="__THEME__/images/zw_img.gif" />Smile</a>
 		            	 </div>
                      </div>
                    </div>
@@ -47,7 +47,7 @@
         <!-- 会话列表 -->
         <ul class="feed_list" id="feed_list"></ul>
 		<p class="moreFoot" id="moreFoot">
-			<a id="load_more_btn" onclick="load_more_message(this)" href="javascript:void(0)"><span class="ico_morefoot"></span>更多</a>
+			<a id="load_more_btn" onclick="load_more_message(this)" href="javascript:void(0)"><span class="ico_morefoot"></span>Xem thêm</a>
 		</p>
         <p class="page">{$message.html}</p>
       </div>
@@ -78,7 +78,7 @@
 		var $reply_content = $('#reply_content');
 		var reply_content  = $reply_content.val();
 		reply_content = reply_content ? reply_content + ' ' : '';
-		var reply_user     = '回复@' + name + '：';
+		var reply_user     = 'Trả lời @' + name + '：';
 
 		if (-1 == reply_content.indexOf(reply_user)) {
 			$reply_content.val(reply_content + reply_user);
@@ -103,9 +103,9 @@
             if(res == '1') {
                 $('#reply_content').val('');
                 load_new_message();
-                //ui.success('发送成功');
+                //ui.success('Gửi tin nhắn thành công');
             }else {
-                ui.error('发送失败');
+                ui.error('Có lỗi trong quá trình gửi tin nhắn');
             }
         });
     }
@@ -126,7 +126,7 @@
                 var message_content_count  = parseInt($message_content_count.html());
                 $message_content_count.html(message_content_count - ids.length);
             }else {
-                ui.error('删除失败');
+                ui.error('Có lỗi phát sinh trong khi xóa');
             }
         });
     }
@@ -136,9 +136,9 @@
 	{
 		var type = 'old';
 		var $o = $(o);
-		$o.html('加载中...');
+		$o.html('Đang tải trang...');
 		load_more(type);
-		$o.html('更多');	
+		$o.html('Xem thêm');	
 	}
 
 	// 加载最新

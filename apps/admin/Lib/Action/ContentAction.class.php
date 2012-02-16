@@ -80,9 +80,9 @@ class ContentAction extends AdministratorAction {
 				$this->assign('jumpUrl', U('admin/Content/ad'));
 			}
 			F('_action_ad',null);	//删除广告缓存
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 
@@ -167,8 +167,8 @@ class ContentAction extends AdministratorAction {
 		M('AdminLog')->add($_LOG);
 
 		$res = model('Expression')->add($_POST);
-		if ($res) $this->success('保存成功');
-		else	  $this->error('保存失败');
+		if ($res) $this->success('Lưu lại thành công');
+		else	  $this->error('Có lỗi phát sinh khi lưu');
 	}
 
 	public function editExpression() {
@@ -200,9 +200,9 @@ class ContentAction extends AdministratorAction {
 		$res = model('Expression')->save($_POST);
 		if ($res) {
 			$this->assign('jumpUrl', U('admin/Content/expression'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else{
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 
@@ -258,9 +258,9 @@ class ContentAction extends AdministratorAction {
 
 		$res = model('Template')->addTemplate($_POST);
 		if ($res) {
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 
@@ -299,9 +299,9 @@ class ContentAction extends AdministratorAction {
 		$res = model('Template')->save($_POST);
 		if ($res) {
 			$this->assign('jumpUrl', U('admin/Content/template'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 

@@ -283,7 +283,7 @@ function addFollowTopic(){
 		if(txt.code=='12'){
 			$("input[name='quick_name']").val('');
 			$('.quick_win').hide();
-			var html = '<li onmouseover="$(this).find(\'.del\').show()" onmouseout="$(this).find(\'.del\').hide()"><a class="del right" title="删除" href="javascript:void(0)" onclick="deleteFollowTopic(this,\''+txt.topicId+'\')"></a><a href="'+U('home/user/search',['k='+txt.name])+'">'+txt.name+'</a></li>';
+			var html = '<li onmouseover="$(this).find(\'.del\').show()" onmouseout="$(this).find(\'.del\').hide()"><a class="del right" title="Xóa" href="javascript:void(0)" onclick="deleteFollowTopic(this,\''+txt.topicId+'\')"></a><a href="'+U('home/user/search',['k='+txt.name])+'">'+txt.name+'</a></li>';
 			$("ul[rel='followTopicArea']").append(html);	
 		}else if(txt.code=='11'){
 			alert('已关注过此话题');
@@ -380,13 +380,13 @@ ui = window.ui ||{
 	
 	sendmessage:function(touid){
 		touid = touid || '';
-		ui.box.load(U('home/Message/post',['touid='+touid]), {title:'发私信'});
+		ui.box.load(U('home/Message/post',['touid='+touid]), {title:'Gửi tin nhắn mới'});
 	},
 	
 	confirm:function(o,text){
 		var callback = $(o).attr('callback');
 		text = text || '确定要做此项操作吗？';
-		this.html = '<div id="ts_ui_confirm" class="ts_confirm"><dl><a class="del" href="javascript:void(0)" onclick="$(\'.ts_confirm\').remove()"></a><dt class="txt"></dt><dd><input type="button" value="确定"  class="btn_b mr5"><input type="button" value="取消"  class="btn_w"></dd></dl></div>';
+		this.html = '<div id="ts_ui_confirm" class="ts_confirm"><dl><a class="del" href="javascript:void(0)" onclick="$(\'.ts_confirm\').remove()"></a><dt class="txt"></dt><dd><input type="button" value="OK!"  class="btn_b mr5"><input type="button" value="取消"  class="btn_w"></dd></dl></div>';
 		// 修改原因: ts_ui_confirm .btn_b按钮会重复提交
 		//if( $('#ts_ui_confirm').html()==null ){
 			$('body').append(this.html);

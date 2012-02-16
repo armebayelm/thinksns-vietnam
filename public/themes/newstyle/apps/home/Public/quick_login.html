@@ -22,23 +22,23 @@
 <!--/快速登录框-->
     <div><!--页面居中暂写样式-->
         <div class="popPage clearfix">
-        	<!--<h4><a href="#" class="del right" onclick="ui.box.close()"></a>用户登录</h4>-->
+        	<!--<h4><a href="#" class="del right" onclick="ui.box.close()"></a>Thành viên đăng nhập</h4>-->
             <div class="main_quike_login">
             <form action="{:U('home/Public/doAjaxLogin')}" method="post" name="ajaxLoginForm">
             	<div class="box_quike_login">
                 	<dl class="list_login">
                     <!--<dt><label>&nbsp;</label><div class="line_tips" id="login_tips">请输入帐号和密码</div></dt>-->
-                    <dd><label>帐号:</label><div class="options_login"><input name="email" type="text" class="text_Pop" title="登录帐号" style="width:188px"/></div></dd>
-                    <dd><label>密码:</label><div class="options_login"><input name="pwd" type="password" class="text_Pop" title="登录密码" style="width:188px"/></div></dd>
+                    <dd><label>T.khoản:</label><div class="options_login"><input name="email" type="text" class="text_Pop" title="登录帐号" style="width:188px"/></div></dd>
+                    <dd><label>M.khẩu:</label><div class="options_login"><input name="pwd" type="password" class="text_Pop" title="登录密码" style="width:188px"/></div></dd>
 					<php> $login_verify_on = in_array('login',$ts['site']['site_verify']); </php>
 					<eq name="login_verify_on" value="1">
-					<dd><label>验证码:</label><div class="options_login"><input name="verify" type="text" class="text_Pop" title="验证码" style="width:100px"/> &nbsp; <a href="javascript:void(0);" onclick="changeverify()"><img src="{:U('home/Public/verify')}" id="verifyimg" alt="换一张" class="alM" /></a></div></dd>
+					<dd><label>Mã xác nhận:</label><div class="options_login"><input name="verify" type="text" class="text_Pop" title="验证码" style="width:100px"/> &nbsp; <a href="javascript:void(0);" onclick="changeverify()"><img src="{:U('home/Public/verify')}" id="verifyimg" alt="Đổi hình khác" class="alM" /></a></div></dd>
                     <else />
 					<input name="verify" type="hidden" class="text_Pop" value="" />
 					</eq>
                     </dd>
-                    <dd><label></label><div class="options_login"><span><input name="remember" type="checkbox" value="1" class="ck" />记住登录状态 | <a target="_blank" href="{:U('home/Public/sendPassword')}">忘记密码?</a></span></div></dd>
-                    <dd><label>&nbsp;</label><input onclick="javascript:ajaxLogin();" type="button" name="button" id="button" value="登录" class="btn_b" /></dd>
+                    <dd><label></label><div class="options_login"><span><input name="remember" type="checkbox" value="1" class="ck" />记住登录状态 | <a target="_blank" href="{:U('home/Public/sendPassword')}">Quên mật khẩu?</a></span></div></dd>
+                    <dd><label>&nbsp;</label><input onclick="javascript:ajaxLogin();" type="button" name="button" id="button" value="Đăng nhập" class="btn_b" /></dd>
                     </dl>
                 </div>
              </form>

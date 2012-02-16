@@ -4,7 +4,7 @@
 	var $hotTopicTab = $('#hotTopicTab');
 	$('#addHotTopic').click(function(o){
 		$hotTopicTab.append('<div>'
-		          + '话题：<input type="text" name="hotTopic[]" /> <a href="javascript:;" title="delete">删除</a><br />'
+		          + '话题：<input type="text" name="hotTopic[]" /> <a href="javascript:;" title="delete">Xóa</a><br />'
 		          + '描述：<textarea name="hotTopicNote[]" cols="36" rows="1"></textarea>'
 	        	  + '</div>');
 		_click_hot_topic();
@@ -94,7 +94,7 @@ function _click_hot_topic()
 	      	<div>
 		        话题：<span class="hotTopic">{$hotTopic[$key]}</span>
 		        <input type="hidden" name="hotTopic[]" value="{$hotTopic[$key]}" />&nbsp;&nbsp;
-		        <a href="javascript:;" title="delete">删除</a>&nbsp;&nbsp;
+		        <a href="javascript:;" title="delete">Xóa</a>&nbsp;&nbsp;
 		        <a href="javascript:;" title="topics">设置专题</a><br />
 		        描述：<span class="hotTopic">{$hotTopic[$key]}</span>		        
 		        <input type="hidden" name="hotTopicNote[]" value="{$hotTopic[$key]}" />
@@ -114,7 +114,7 @@ function _click_hot_topic()
       </dd>
     </dl>
     <div class="page_btm">
-      <input type="submit" class="btn_b" value="确定" />
+      <input type="submit" class="btn_b" value="OK!" />
     </div>
     </form>
   </div>

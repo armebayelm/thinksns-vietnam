@@ -37,7 +37,7 @@
         <td>{$vo.content|getShort=36}</td>
         <td>
             <a href="{$vo.url}" target="_blank">查看</a>
-            <a href="javascript:void(0);" onclick="deleteComment('{$vo.comment_id}')">删除</a>
+            <a href="javascript:void(0);" onclick="deleteComment('{$vo.comment_id}')">Xóa</a>
         </td>
       </tr>
   </volist>
@@ -109,7 +109,7 @@
                     ui.success('Đã xóa thành công');
                     removeItem(ids);
                 }else {
-                    ui.error('删除失败');
+                    ui.error('Có lỗi phát sinh trong khi xóa');
                 }
             });
         }

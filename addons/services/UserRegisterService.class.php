@@ -40,7 +40,7 @@ class UserRegisterService extends Service
 
         $uid = $this->_addUser($email, $uname, $password, $is_init);
 		if (!$uid) {
-		    $this->last_error = '保存失败';
+		    $this->last_error = 'Có lỗi phát sinh khi lưu';
 		    return false;
 		}
 

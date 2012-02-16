@@ -159,7 +159,7 @@
 //         
         // var lodeMore = function(){
              // $(opt.loadMoreDiv).click(function() {
-                // $(this).html('加载中...');
+                // $(this).html('Đang tải trang...');
                 // var self = this;
                 // operateFactory.create("loadMore",function(txt){
                     // $(opt.weiboList).append(txt);

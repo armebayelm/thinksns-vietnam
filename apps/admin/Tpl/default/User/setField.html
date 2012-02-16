@@ -58,7 +58,7 @@ function deleteField(ids) {
                 ui.success('Đã xóa thành công');
                 removeItem(ids);
             }else {
-                ui.error('删除失败');
+                ui.error('Có lỗi phát sinh trong khi xóa');
             }
         });
     }
@@ -99,7 +99,7 @@ function removeItem(ids) {
 	    <td><switch name="vo.module"><case value="base">基本资料</case><case value="intro">个人情况</case><case value="contact">联系方式</case></switch></td>
 	    <td><eq name="vo.status" value="1">是<else />否</eq></td>
 	    <td><eq name="vo.showspace" value="1">是<else />否</eq></td>
-	    <td><a href="javascript:void(0);" onclick="deleteField('{$vo['id']}');">删除</a></td>
+	    <td><a href="javascript:void(0);" onclick="deleteField('{$vo['id']}');">Xóa</a></td>
 	  </tr>
    </volist>
    </table>

@@ -9,7 +9,7 @@
 	<input type="hidden" name="reply_comment_id" id="replyid_{$randtime}">
 		 <a class="faceicon1" href="javascript:void(0)" onclick="ui.emotions(this)" target_set="comment_{$randtime}"></a>
       <textarea class="left text"  name="comment_content" rows="1" style="word-wrap" id="comment_{$randtime}" ></textarea>
-      <input type="submit" value="确定" class="N_but" style="*vertical-align:middle;">
+      <input type="submit" value="OK!" class="N_but" style="*vertical-align:middle;">
       <div style="clear:both; color:#666; margin-left:32px;">
         <label>
           <input name="transpond" type="checkbox" value="1" />
@@ -31,9 +31,9 @@
       <p class="list_c"><space uid="vo.uid" class="null" target="_blank">{uname}</space>{$vo.uid|getUserGroupIcon} : {$vo.content|formatComment=true} ({$vo.ctime|friendLydate})</p>
       <div class="alR clear">
       	<php>if( $vo['uid']==$mid || $data['uid']==$mid){</php>
-			<a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除这条评论?')" callback="delComment({$vo.comment_id})">删除</a>
+			<a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除这条评论?')" callback="delComment({$vo.comment_id})">Xóa</a>
 		<php>}</php>
-		<php>if($privacy['weibo_comment']){</php>&nbsp;&nbsp;<a href="javascript:void(0)" onclick="reply('{$vo.uid|getUserName}',{$randtime},{$vo.comment_id})">回复</a><php>}</php></div>
+		<php>if($privacy['weibo_comment']){</php>&nbsp;&nbsp;<a href="javascript:void(0)" onclick="reply('{$vo.uid|getUserName}',{$randtime},{$vo.comment_id})">Trả lời</a><php>}</php></div>
     </div>
 	</volist>
 	
@@ -84,7 +84,7 @@
 	}
 	//回复
 	function reply( name, weibo_id ,id){
-		$("#comment_"+weibo_id).val( '回复@'+name+' : ' ).focus();
+		$("#comment_"+weibo_id).val( 'Trả lời @'+name+' : ' ).focus();
 		$("#replyid_"+weibo_id).val(id);
 		
 		var textArea = document.getElementById("comment_"+weibo_id);
@@ -107,7 +107,7 @@
 				$("#comment_list_c_"+id).slideUp('fast');
 				$("a[rel='comment'][minid='{$data.weibo_id}']").html( "评论("+txt.count+")" );
 			}else{
-				alert('删除失败');
+				alert('Có lỗi phát sinh trong khi xóa');
 			}
 		 })
 		

@@ -25,7 +25,7 @@
         <td><div style="float:left"><a href="{:U('admin/Tool/area',array('pid'=>$vo['area_id']))}" id="area_title_{$vo.area_id}">{$vo.title}</a></div></td>
         <td>
             <a href="javascript:void(0);" onclick="edit({$vo['area_id']});">编辑</a> 
-            <a href="javascript:void(0);" onclick="del({$vo['area_id']});">删除</a>  
+            <a href="javascript:void(0);" onclick="del({$vo['area_id']});">Xóa</a>  
         </td>
       </tr>
   </volist>
@@ -104,7 +104,7 @@
 		        });
 	            ui.success('Đã xóa thành công');
 	        }else {
-	        	ui.success('删除失败');
+	        	ui.success('Có lỗi phát sinh trong khi xóa');
 	        }
         });
         

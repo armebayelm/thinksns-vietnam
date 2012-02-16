@@ -68,7 +68,7 @@ var Lang={
  Input_Tags:"请输入标签",
  Empty_Content:"内容不能为空",
  Activity_Undone:"未完成原因",
- Del_Private_Message:"确定要删除该私信?",
+ Del_Private_Message:"Bạn có chắc bạn muốn xóa tin nhắn?",
  Choose_Private_Message:"请选择私信",
  Save_Success:"保存成功",
  Save_Failed:"保存失败",

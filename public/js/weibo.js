@@ -117,7 +117,7 @@ $.extend({
                             $("#list_li_"+weibo_id).slideUp('fast');
                             weibo.downCount('weibo');
                         }else{
-                            alert('删除失败');
+                            alert('Có lỗi phát sinh trong khi xóa');
                         }
                    },{id:weibo_id})
                 },
@@ -594,7 +594,7 @@ $.extend({
                 },
                 lodeMore:function(){
                      $(opt.loadMoreDiv).click(function() {
-                        $(this).html('加载中...');
+                        $(this).html('Đang tải trang...');
                         var self = this;
                         operateFactory.create("loadMore",function(txt){
                             clearInterval(isLoading);
@@ -694,7 +694,7 @@ $.extend({
         
         var initHtml=function(parent,emtions,topic){
             var emotionsHtml = "<a href=\"javascript:void(0)\" target_set=\"content_publish\" onclick=\"ui.emotions(this)\" class=\"a52\">"
-                + "<img class=\"icon_add_face_d\" src=\""+_THEME_+"/images/zw_img.gif\" />表情</a> ";
+                + "<img class=\"icon_add_face_d\" src=\""+_THEME_+"/images/zw_img.gif\" />Smile</a> ";
             var topicHtml    = "<a href=\"javascript:void(0)\" onclick=\"weibo.addtheme()\" class=\"a52\">"
                 + "<img class=\"icon_add_topic_d\" src=\""+_THEME_+"/images/zw_img.gif\" />话题</a> ";
             var html = '';

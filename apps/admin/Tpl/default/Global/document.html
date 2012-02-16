@@ -40,7 +40,7 @@
         </td>
         <td>
 			<a href="{:U('admin/Global/editDocument',array('id'=>$vo['document_id']))}">编辑</a>
-			<a href="javascript:void(0);" onclick="deleteDocument('{$vo.document_id}')">删除</a>
+			<a href="javascript:void(0);" onclick="deleteDocument('{$vo.document_id}')">Xóa</a>
 		</td>
       </tr>
   </volist>
@@ -111,7 +111,7 @@
     				ui.success('Đã xóa thành công');
     				removeItem(ids);
     			}else {
-    				ui.error('删除失败');
+    				ui.error('Có lỗi phát sinh trong khi xóa');
     			}
     		});
     	}
@@ -133,9 +133,9 @@
 				if(res == '1') {
 					//交换位置
 					direction == 'up' ? $('#'+document_id).insertBefore('#'+baseid) : $("#"+document_id).insertAfter('#'+baseid);
-					ui.success('保存成功');
+					ui.success('Lưu lại thành công');
 				}else {
-					ui.error('保存失败');
+					ui.error('Có lỗi phát sinh khi lưu');
 				}
 			});
 		}

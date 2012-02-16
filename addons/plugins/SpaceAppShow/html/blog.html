@@ -21,7 +21,7 @@
           <php>}</php>
           <p>
           <php>if(ACTION_NAME == 'my' && $vo['uid']==$ts['user']['uid']) {</php>
-            <a href="{:U('blog/Index/edit', array('id'=>$vo['id'], 'mid'=>$vo['uid']))}">编辑</a> | <a href="javascript:deleteBlog('{:U('blog/Index/doDeleteBlog', array('id'=>$vo['id']))}')">删除</a>&nbsp;&nbsp;
+            <a href="{:U('blog/Index/edit', array('id'=>$vo['id'], 'mid'=>$vo['uid']))}">编辑</a> | <a href="javascript:deleteBlog('{:U('blog/Index/doDeleteBlog', array('id'=>$vo['id']))}')">Xóa</a>&nbsp;&nbsp;
           <php>}else {</php>
             <space uid="vo.uid" target="_blank">{uname}</space>
             {$vo.uid|getUserGroupIcon} 

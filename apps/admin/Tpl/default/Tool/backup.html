@@ -28,7 +28,7 @@
         </dd>
     </dl>
     <div class="page_btm">
-      <input type="submit" class="btn_b" value="确定" />
+      <input type="submit" class="btn_b" value="OK!" />
     </div>
     </form>
   </div>
@@ -60,7 +60,7 @@
         <td>{$vo.addtime}</td>
         <td>{$vo.filesize}</td>
         <td>
-            <a href="javascript:void(0);" onclick="importsql('{$vo['filename']}');">导入</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0);" onclick="delsql('{$filename}');">删除</a>
+            <a href="javascript:void(0);" onclick="importsql('{$vo['filename']}');">导入</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0);" onclick="delsql('{$filename}');">Xóa</a>
         </td>
       </tr>
   </volist>
@@ -120,7 +120,7 @@
                 });
                 ui.success('Đã xóa thành công');
             }else {
-                ui.error('删除失败');
+                ui.error('Có lỗi phát sinh trong khi xóa');
             }
         });
     }

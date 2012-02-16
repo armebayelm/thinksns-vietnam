@@ -20,10 +20,10 @@
 <php>}</php></textarea>
             </dd>
             <dd>
-            <a href="javascript:void(0)" target_set="transpond_content_{$data.weibo_id}" onclick="ui.emotions(this);" class="a52"><img class="icon_add_face_d" src="__THEME__/images/zw_img.gif" />表情</a>
+            <a href="javascript:void(0)" target_set="transpond_content_{$data.weibo_id}" onclick="ui.emotions(this);" class="a52"><img class="icon_add_face_d" src="__THEME__/images/zw_img.gif" />Smile</a>
             </dd>
             <dd>
-            <div class="answers right" style="width:auto"><input type="button" error="转发失败" id="transpond_button" class="btn_b right buttonObj" value="确定"></div>
+            <div class="answers right" style="width:auto"><input type="button" error="转发失败" id="transpond_button" class="btn_b right buttonObj" value="OK!"></div>
             <div><label><input type="checkbox" class="labelbox" name="reply_weibo_id[]" value="{$data.weibo_id}" > 同时作为给 {$data.uid|getUserName} 的评论发布</label></div>
             <php>if( $data['transpond_id'] && $data['transponInfo']['uid']!=$data['uid'] ){</php>
             <div><label><input type="checkbox" class="labelbox" name="reply_weibo_id[]" value="{$data.transponInfo.weibo_id}"> 同时作为给 {$data.transponInfo.uid|getUserName} 的评论发布</label></div>

@@ -15,7 +15,7 @@ $(document).ready(function(){
 function setStatus(app_id, status) {    
 	$.post("{:U('admin/Apps/doSetStatus')}",{app_id:app_id,status:status},function(res){
 		if(res=='1') {
-			ui.success('保存成功');
+			ui.success('Lưu lại thành công');
 			
 			var statusArray = new Array("关闭","默认","可选");
 			$('#status_'+app_id).html(statusArray[status]);
@@ -27,7 +27,7 @@ function setStatus(app_id, status) {
 			}
 			$('#setStatus_'+app_id).html(html);
 		}else {
-			ui.error('保存失败');
+			ui.error('Có lỗi phát sinh khi lưu');
 		}
 	});
 }
@@ -41,9 +41,9 @@ function move(app_id, direction) {
             if(res == '1') {
                 //交换位置
                 direction == 'up' ? $('#'+app_id).insertBefore('#'+baseid) : $("#"+app_id).insertAfter('#'+baseid);
-                ui.success('保存成功');
+                ui.success('Lưu lại thành công');
             }else {
-                ui.error('保存失败');
+                ui.error('Có lỗi phát sinh khi lưu');
             }
         });
     }

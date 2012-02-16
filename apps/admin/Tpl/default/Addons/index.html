@@ -21,9 +21,9 @@ function move(id, direction) {
             if(res == '1') {
                 //交换位置
                 direction == 'up' ? $('#'+id).insertBefore('#'+baseid) : $("#"+id).insertAfter('#'+baseid);
-                ui.success('保存成功');
+                ui.success('Lưu lại thành công');
             }else {
-                ui.error('保存失败');
+                ui.error('Có lỗi phát sinh khi lưu');
             }
         });
     }

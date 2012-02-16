@@ -67,7 +67,7 @@ abstract class Hooks
      */
     protected function error($message)
     {
-        $this->_dispatch_jump($message ? $message : '操作失败', 0);
+        $this->_dispatch_jump($message ? $message : 'Thực thi thao tác thất bại', 0);
     }
 
     /**
@@ -83,7 +83,7 @@ abstract class Hooks
      */
     protected function success($message)
     {
-        $this->_dispatch_jump($message ? $message : '操作成功', 1);
+        $this->_dispatch_jump($message ? $message : 'Thực thi thao tác thành công', 1);
     }
 
     /**

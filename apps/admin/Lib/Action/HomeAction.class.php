@@ -87,7 +87,7 @@ class HomeAction extends AdministratorAction
 		$apps = getSubByKey($apps, 'app_name');
 		$apps[] = 'core';
 		if (!in_array($_GET['app_name'], $apps))
-			$this->error('参数错误');
+			$this->error('Tham số lỗi');
 
 		$lastest_version = service('System')->checkUpdate();
 		if ($lastest_version['error'])

@@ -106,7 +106,7 @@
         if(confirm('您将删除'+length+'条记录，删除后无法恢复，确定继续？')) {
             $.post("{:U('admin/Content/doDeleteComment')}",{ids:ids,from_app:from_app},function(res){
                 if(res=='1') {
-                    ui.success('删除成功');
+                    ui.success('Đã xóa thành công');
                     removeItem(ids);
                 }else {
                     ui.error('删除失败');

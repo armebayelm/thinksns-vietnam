@@ -21,9 +21,9 @@ class SpaceAction extends Action
 			$user_info = D('User')->getUserByIdentifier($this->uid);
 	   	   	if ($user_info) {
 	   	   		$userinfo = array(
-	   	   						'微博地址' => U('home/Space/index', array('uid' => $user_info['domain'] ? $user_info['domain'] : $this->uid)),
-	   	   						'性别'    => getSex($user_info['sex']),
-	   	   						'所在地'  => $user_info['location'],
+	   	   						'Địa chỉ mblog' => U('home/Space/index', array('uid' => $user_info['domain'] ? $user_info['domain'] : $this->uid)),
+	   	   						'Giới tính'    => getSex($user_info['sex']),
+	   	   						'Nơi sống'  => $user_info['location'],
 	   	   					);
     			// 基本信息-钩子
 	   	   		Addons::hook('home_space_profile_base', array('uid' => $this->uid, 'user_info' => & $userinfo));
@@ -65,7 +65,7 @@ class SpaceAction extends Action
         $data['user'] = D('User')->getUserByIdentifier($this->uid);
 
         $this->assign($data);
-        $this->setTitle($data['user']['uname'] . '的空间');
+        $this->setTitle('Trang cá nhân của '.$data['user']['uname']);
     	$this->display();
     }
 
@@ -80,7 +80,7 @@ class SpaceAction extends Action
     	// 联系方式-钩子
     	Addons::hook('home_space_profile_contact', array('uid' => $this->uid, 'contact' => & $data['userInfo']['contact']['list']));
     	$this->assign( $data );
-    	$this->setTitle(getUserName($this->uid) . '的详细资料');
+    	$this->setTitle('Thông tin chi tiết của '.getUserName($this->uid));
     	$this->display();
     }
 
@@ -159,7 +159,7 @@ class SpaceAction extends Action
     	$data['list'] = D('Follow','weibo')->getList($this->uid,$data['type'],0,$data['gid']);
 
     	$this->assign($data);
-    	$this->setTitle(getUserName($this->uid) . '的' . ($data['type'] == 'follower' ? '粉丝' : '关注'));
+    	$this->setTitle(getUserName($this->uid) . 'của ' . ($data['type'] == 'follower' ? '粉丝' : '关注'));
     	$this->display();
     }
 
@@ -175,7 +175,7 @@ class SpaceAction extends Action
 			}
 			$data['location']		=	getLocation($data['province'],$data['city']);
 			if(!$data['location'])	$data['location'] ='<br />';
-			$data['tags']			=	(!$tags)?'无':implode(' ',$tags);
+			$data['tags']			=	(!$tags)?'None':implode(' ',$tags);
 			$data['following_url']	=	U('home/Space/follow',array('type'=>'following','uid'=>$uid));
 			$data['follower_url']	=	U('home/Space/follow',array('type'=>'follower','uid'=>$uid));
 			$data['space_url']		=	U('home/Space/index',array('uid'=>$uid));

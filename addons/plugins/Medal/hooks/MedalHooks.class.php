@@ -25,7 +25,7 @@ class MedalHooks extends Hooks
     public function home_account_do($param) {
     	// medal_manage主要是为了防止表单重复提交 :(
     	if ($_POST['medal_manage'] != '1') {
-    		$this->error('参数错误');
+    		$this->error('Tham số lỗi');
     	}
 
     	$MedalDao = $this->model('Medal');
@@ -51,7 +51,7 @@ class MedalHooks extends Hooks
     	}
 
     	$this->assign('jumpUrl', U('home/Account/medal', array('type'=>'manage')));
-    	$this->success('操作成功');
+    	$this->success('Thực thi thao tác thành công');
     }
 
 	// 勋章展示

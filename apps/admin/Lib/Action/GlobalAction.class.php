@@ -33,7 +33,7 @@ class GlobalAction extends AdministratorAction {
 	//设置站点
 	public function doSetSiteOpt() {
 		if (empty($_POST)) {
-			$this->error('参数错误');
+			$this->error('Tham số lỗi');
 		}
 		//保存LOGO
 		if(!empty($_FILES['site_logo']['name'])){
@@ -445,7 +445,7 @@ class GlobalAction extends AdministratorAction {
 		}
 
 
-		$this->success('操作成功');
+		$this->success('Thực thi thao tác thành công');
 	}
 
 	/** 系统配置 - 公告配置 **/

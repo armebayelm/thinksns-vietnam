@@ -471,7 +471,7 @@ $.extend({
         before_publish = function(obj){
             obj = obj==undefined?$(opt.publishForm.textarea):obj;
             if( $.trim( obj.val() ) == '' ){
-                ui.error('内容不能为空');     
+                ui.error('Nội dung không được để trống');     
                 return false;
             }
             return true;
@@ -625,7 +625,7 @@ $.extend({
                         var _this = $(this);
                         var _comment_content = _this.find("textarea[name='comment_content']");
                         if( _comment_content.val()=='' ){
-                            ui.error('内容不能为空');
+                            ui.error('Nội dung không được để trống');
                             return false;
                         }
                         var _button = _this.find("input[type='submit']");

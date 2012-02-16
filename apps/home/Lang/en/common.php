@@ -58,7 +58,7 @@ return array (
    'error_security_code' => '验证码错误',
    'password_notnull' => '密码不能为空',
    'email_format_error' => 'email格式错误',
-   'parameter_error' => '参数错误',
+   'parameter_error' => 'Tham số lỗi',
    'login_success' => '登陆成功',
    'login_error' => '登陆失败',
    'login' => '登陆',

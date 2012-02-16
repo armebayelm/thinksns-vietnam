@@ -132,7 +132,7 @@ class ToolAction extends AdministratorAction {
 	
 	public function doBackUp() {
 		if( empty($_REQUEST['backup_type']) )
-			$this->error('参数错误');
+			$this->error('Tham số lỗi');
 		
 		$tables		= array();
 		// 当前卷号
@@ -275,7 +275,7 @@ class ToolAction extends AdministratorAction {
 	
 	public function doDbconvert() {
 		if ($_POST['doDbconvert'] != 1) {
-			$this->error('参数错误');
+			$this->error('Tham số lỗi');
 		}
 		
 		// 转换ts_comment的数据
@@ -390,6 +390,6 @@ class ToolAction extends AdministratorAction {
 		$data['cnzz_password']	= '';
 		model('Xdata')->lput('cnzz', $data);
 		$this->assign('jumpUrl', U('admin/Tool/cnzz'));
-		$this->success('删除成功');
+		$this->success('Đã xóa thành công');
 	}
 }

@@ -133,7 +133,7 @@ class AppsAction extends AdministratorAction {
 		$info = $this->__getAppInfo($_POST['path_name']);
 		
 		if (!$info)
-			$this->error('参数错误');
+			$this->error('Tham số lỗi');
 
 		if (model('App')->isAppNameExist($_POST['path_name']))
 			$this->error('应用已存在');

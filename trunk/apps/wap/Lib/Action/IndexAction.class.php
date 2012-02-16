@@ -178,12 +178,12 @@ class IndexAction extends BaseAction
 	public function image() {
 		$weibo_id = intval($_GET['weibo_id']);
 		if ($weibo_id <= 0) {
-			redirect(U('wap/Index/index'), 3, '参数错误');
+			redirect(U('wap/Index/index'), 3, 'Tham số lỗi');
 		}
 		$weibo = api('Statuses')->data(array('id'=>$weibo_id))->show();
 		$image = intval($weibo['transpond_id']) == 0 ? $weibo['type_data'] :  $weibo['transpond_data']['type_data'];
 		if (empty($image)) {
-			redirect(U('wap/Index/index'), 3, '无图片信息');
+			redirect(U('wap/Index/index'), 3, 'Không có thông tin hình ảnh');
 		}
 
 		$this->assign('weibo_id',$weibo_id);
@@ -212,7 +212,7 @@ class IndexAction extends BaseAction
 		if ( !in_array($_GET['from'], array('following', 'followers', 'search', 'weibo')) ||
 			 !in_array($_GET['type'], array('follow', 'unfollow'))     ||
 			 $user_id <= 0 ) {
-			redirect(U('wap/Index/index'), 3, '参数错误');
+			redirect(U('wap/Index/index'), 3, 'Tham số lỗi');
 		}
 		$data['user_id'] = $user_id;
 		$method = $_GET['type'] == 'follow' ? 'create' : 'destroy';
@@ -227,9 +227,9 @@ class IndexAction extends BaseAction
 				$target = U('wap/Index/'.$_GET['from']);
 		}
 		if ( api('Friendships')->data($data)->$method() ) {
-			redirect($target, 1, '操作成功');
+			redirect($target, 1, 'Thực thi thao tác thành công');
 		}else {
-			redirect($target, 3, '操作失败');
+			redirect($target, 3, 'Thực thi thao tác thất bại');
 		}
 	}
 
@@ -242,9 +242,9 @@ class IndexAction extends BaseAction
 	public function doPost() {
 		$_POST['content'] = preg_replace('/^\s+|\s+$/i', '', $_POST['content']);
 		if ( empty($_POST['content']) && !empty($_FILES['pic']['name']) ) {
-			$_POST['content'] = '图片分享';
+			$_POST['content'] = 'Chia sẻ hình';
 		}else if ( empty($_POST['content']) && empty($_FILES['pic']['name']) ) {
-			redirect(U('wap/Index/index'), 3, '内容不能为空');
+			redirect(U('wap/Index/index'), 3, 'Nội dung không được để trống');
 		}
 		if (isset($_POST['nosplit'])) {
 			$this->assign('content', $_POST['content']);
@@ -258,7 +258,7 @@ class IndexAction extends BaseAction
 		if (!isset($_POST['split']) && $length > $GLOBALS['ts']['site']['length']) {
 			if(!empty($_FILES['pic']['name'])) { // 自动发一条图片微博
 				$data['pic']      = $_FILES['pic'];
-				$data['content']  = '图片分享';
+				$data['content']  = 'Chia sẻ hình';
 				$data['from']     = $this->_type_wap;
 				$res = api('Statuses')->data($data)->upload();
 			}
@@ -294,7 +294,7 @@ class IndexAction extends BaseAction
 		$comment_id	= intval($_GET['comment_id']);
 		$uid		= intval($_GET['uid']);
 		if ( $weibo_id <= 0 || $comment_id <= 0 || $uid <= 0 ) {
-			redirect(U('wap/Index/index'), 3, '参数错误');
+			redirect(U('wap/Index/index'), 3, 'Tham số lỗi');
 		}
 		$this->assign('weibo_id', $weibo_id);
 		$this->assign('comment_id', $comment_id);
@@ -304,10 +304,10 @@ class IndexAction extends BaseAction
 
 	public function doComment() {
 		if ( ($weibo_id = intval($_POST['weibo_id'])) <= 0 ) {
-			redirect(U('wap/Index/index'), 3, '参数错误');
+			redirect(U('wap/Index/index'), 3, 'Tham số lỗi');
 		}
 		if ( empty($_POST['content']) ) {
-			redirect(U('wap/Index/detail',array('weibo_id'=>$weibo_id)), 3, '内容不能为空');
+			redirect(U('wap/Index/detail',array('weibo_id'=>$weibo_id)), 3, 'Nội dung không được để trống');
 		}
 		// 仅取前140字
 		$_POST['content'] = mb_substr($_POST['content'], 0, $GLOBALS['ts']['site']['length'], 'UTF8');
@@ -319,21 +319,21 @@ class IndexAction extends BaseAction
 		$data['transpond']			= intval($_POST['transpond']);
 		$res = api('Statuses')->data($data)->comment();
 		if ($res) {
-			redirect(U('wap/Index/detail', array('weibo_id'=>$weibo_id)), 1, '评论成功');
+			redirect(U('wap/Index/detail', array('weibo_id'=>$weibo_id)), 1, 'Gửi nhận xét thành công');
 		}else {
-			redirect(U('wap/Index/detail', array('weibo_id'=>$weibo_id)), 3, '评论失败, 请稍后重试');
+			redirect(U('wap/Index/detail', array('weibo_id'=>$weibo_id)), 3, 'Gửi nhận xét thất bại, hãy thử lại sau');
 		}
 	}
 
 	public function forward() {
 		$weibo_id = intval($_GET['weibo_id']);
 		if ( $weibo_id <= 0 ) {
-			redirect(U('wap/Index/index'), 3, '参数错误');
+			redirect(U('wap/Index/index'), 3, 'Tham số lỗi');
 		}
 		$data['id']	= $weibo_id;
 		$weibo = api('Statuses')->data($data)->show();
 		if (!$weibo) {
-			redirect(U('wap/Index/index'), 3, '参数错误');
+			redirect(U('wap/Index/index'), 3, 'Tham số lỗi');
 		}
 
 		$this->assign('weibo', $weibo);
@@ -343,17 +343,17 @@ class IndexAction extends BaseAction
 	public function doForward() {
 		$weibo_id = intval($_POST['weibo_id']);
 		if ($weibo_id <= 0) {
-			redirect(U('wap/Index/detail',array('weibo_id'=>$weibo_id)), 3, '参数错误');
+			redirect(U('wap/Index/detail',array('weibo_id'=>$weibo_id)), 3, 'Tham số lỗi');
 		}
 		if (empty($_POST['content'])) {
-			redirect(U('wap/Index/detail',array('weibo_id'=>$weibo_id)), 3, '内容不能为空');
+			redirect(U('wap/Index/detail',array('weibo_id'=>$weibo_id)), 3, 'Nội dung không được để trống');
 		}
 
 		$data['id']	= $weibo_id;
 		$weibo = api('Statuses')->data($data)->show();
 		unset($data);
 		if ( empty($weibo) ) {
-			redirect(U('wap/Index/index'), 3, '参数错误');
+			redirect(U('wap/Index/index'), 3, 'Tham số lỗi');
 		}
 
 		// 整合被转发的内容
@@ -376,16 +376,16 @@ class IndexAction extends BaseAction
 		}
 		$res = api('Statuses')->data($data)->repost();
 		if ($res) {
-			redirect(U('wap/Index/detail', array('weibo_id'=>$weibo_id)), 1, '转发成功');
+			redirect(U('wap/Index/detail', array('weibo_id'=>$weibo_id)), 1, 'Chuyển tiếp tin thành công');
 		}else {
-			redirect(U('wap/Index/detail', array('weibo_id'=>$weibo_id)), 3, '转发失败, 请稍后重试');
+			redirect(U('wap/Index/detail', array('weibo_id'=>$weibo_id)), 3, 'Chuyển tiếp lỗi, hãy thử lại sau');
 		}
 	}
 
 	public function doSearch()
 	{
 		if ( empty($_REQUEST['key']) )
-			redirect(U('wap/Index/search'), 3, '请输入关键字');
+			redirect(U('wap/Index/search'), 3, 'Vui lòng nhập từ khóa');
 
 		if ( isset($_REQUEST['user']) ) {
 			$method  = 'searchuser';
@@ -418,7 +418,7 @@ class IndexAction extends BaseAction
 	public function doDelete() {
 		$weibo_id = intval($_GET['weibo_id']);
 		if ($weibo_id <= 0) {
-			redirect(U('wap/Index/index', 3, '参数错误'));
+			redirect(U('wap/Index/index', 3, 'Tham số lỗi'));
 		}
 		if ( !in_array($_GET['from'], array('index','weibo','doSearch','atMe','favorite')) ) {
 			$_GET['from'] = 'index';
@@ -428,16 +428,16 @@ class IndexAction extends BaseAction
 		$data['id'] = $weibo_id;
 		$res = api('Statuses')->data($data)->destroy();
 		if ($res) {
-			redirect($target, 1, '删除成功');
+			redirect($target, 1, 'Đã xóa thành công');
 		}else {
-			redirect($target, 3, '删除失败，请稍后重试');
+			redirect($target, 3, 'Xóa thất bại, hãy thử lại sau');
 		}
 	}
 
 	public function doFavorite() {
 		$weibo_id = intval($_GET['weibo_id']);
 		if ($weibo_id <= 0) {
-			redirect(U('wap/Index/index', 3, '参数错误'));
+			redirect(U('wap/Index/index', 3, 'Tham số lỗi'));
 		}
 		if ( !in_array($_GET['from'], array('index','detail','weibo','doSearch','atMe','favorite')) ) {
 			$_GET['from'] = 'index';
@@ -448,16 +448,16 @@ class IndexAction extends BaseAction
 		$data['id'] = $weibo_id;
 		$res = api('Favorites')->data($data)->create();
 		if ($res) {
-			redirect($target, 1, '收藏成功');
+			redirect($target, 1, 'Thêm vào yêu thích thành công');
 		}else {
-			redirect($target, 3, '收藏失败，请稍后重试');
+			redirect($target, 3, 'Thêm yêu thích lỗi, hãy thử lại sau');
 		}
 	}
 
 	public function doUnFavorite() {
 		$weibo_id = intval($_GET['weibo_id']);
 		if ($weibo_id <= 0) {
-			redirect(U('wap/Index/index', 3, '参数错误'));
+			redirect(U('wap/Index/index', 3, 'Tham số lỗi'));
 		}
 		if ( !in_array($_GET['from'], array('index','detail','weibo','doSearch','atMe','favorite')) ) {
 			$_GET['from'] = 'index';
@@ -468,15 +468,15 @@ class IndexAction extends BaseAction
 		$data['id'] = $weibo_id;
 		$res = api('Favorites')->data($data)->destroy();
 		if ($res) {
-			redirect($target, 1, '取消成功');
+			redirect($target, 1, 'Hủy yêu thích thành công');
 		}else {
-			redirect($target, 3, '取消失败，请稍后重试');
+			redirect($target, 3, 'Hủy bỏ lỗi, hãy thử lại sau');
 		}
 	}
 
 	public function urlalert() {
 		if( !isset($_GET['url']) || !isset($_GET['from_url']) ) {
-			redirect(U('wap/Index/index'), 3, '参数错误');
+			redirect(U('wap/Index/index'), 3, 'Tham số lỗi');
 		}
 		$this->assign('url', $_GET['url']);
 		$this->assign('from_url', $_GET['from_url']);

@@ -20,7 +20,7 @@ return array (
   'del_grouping' => '删除分组',
   'more' => '更多',
   'bind_account' => '绑定帐号',
-  'del_error' => '删除失败，请稍后重试',
+  'del_error' => 'Xóa thất bại, hãy thử lại sau',
   'loading' => '加载中...',
   'at_who' => '你想用@提到谁？',
   'follow_this_topic' => '关注该话题',

@@ -207,7 +207,7 @@
 		var url = "<php>echo $from_app=='weibo' ? U('weibo/Operate/deleteMuleComment') : U('home/Comment/doDelete');</php>";
 		
 		$.post(url,{id:selectid},function(txt){
-			ui.success('删除成功');
+			ui.success('Đã xóa thành công');
 			setInterval("location.reload()",1000);
 		})
 	}

@@ -82,7 +82,7 @@ class UserAction extends AdministratorAction {
     //编辑用户
     public function editUser() {
     	$_GET['uid']  = intval($_GET['uid']);
-    	if ($_GET['uid'] <= 0) $this->error('参数错误');
+    	if ($_GET['uid'] <= 0) $this->error('Tham số lỗi');
 
     	$map['uid']	= $_GET['uid'];
     	$user = M('user')->where($map)->find();

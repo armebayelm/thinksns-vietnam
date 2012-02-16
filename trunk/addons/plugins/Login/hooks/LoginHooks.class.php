@@ -659,7 +659,7 @@ class LoginHooks extends Hooks {
 	public function login_register_on_client()
 	{
 		if ( ! in_array($_POST['type'], array('douban','sina', 'qq')) ) {
-			$this->_loginFailureOnClient('参数错误');
+			$this->_loginFailureOnClient('Tham số lỗi');
 		}
 
 		if( !isLegalUsername( t($_POST['uname']) ) ){
@@ -735,7 +735,7 @@ class LoginHooks extends Hooks {
 	public function login_bind_on_client()
 	{
 		if ( ! in_array($_POST['type'], array('douban','sina','qq')) ) {
-			$this->_loginFailureOnClient('参数错误');
+			$this->_loginFailureOnClient('Tham số lỗi');
 		}
 
 		$psd  = ($_POST['passwd']) ? $_POST['passwd'] : true;

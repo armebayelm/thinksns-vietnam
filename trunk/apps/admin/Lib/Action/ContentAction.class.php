@@ -29,7 +29,7 @@ class ContentAction extends AdministratorAction {
 		$map['ad_id'] = intval($_GET['id']);
 		$ad = M('ad')->where($map)->find();
 		if(empty($ad))
-			$this->error('参数错误');
+			$this->error('Tham số lỗi');
 		$this->assign($ad);
 
 		$this->assign('type', 'edit');
@@ -54,7 +54,7 @@ class ContentAction extends AdministratorAction {
 		if(empty($_POST['title']))
 			$this->error('标题不能为空');
 		if($_POST['place'] < 0 || $_POST['place'] > 5)
-			$this->error('参数错误');
+			$this->error('Tham số lỗi');
 
 		$_LOG['uid'] = $this->mid;
 		$_LOG['type'] = isset($_POST['ad_id']) ? '3' : '1';

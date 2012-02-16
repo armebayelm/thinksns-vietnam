@@ -726,7 +726,7 @@ class PublicAction extends Action{
 EOD;
 		// 发送邮件
 		global $ts;
-		$email_sent = service('Mail')->send_email($email, "激活{$ts['site']['site_name']}帐号",$body);
+		$email_sent = service('Mail')->send_email($email, "Kích hoạt tài khoản tại {$ts['site']['site_name']}",$body);
 
 		// 渲染输出
 		if ($email_sent) {
@@ -1135,22 +1135,22 @@ EOD;
     	foreach($list['data'] as $key => $value) {
     		switch($value['type']) {
     			case 1:
-    				$list['data'][$key]['type'] = '风格模板';
+    				$list['data'][$key]['type'] = 'Template';
     				break;
     			case 2:
-    				$list['data'][$key]['type'] = '插件';
+    				$list['data'][$key]['type'] = 'Plugin';
     				break;
     			case 3:
-    				$list['data'][$key]['type'] = '应用';
+    				$list['data'][$key]['type'] = 'App';
     				break;
     		}
     	}
 		
 		$html = '<div class="opentitlenav">';
-		$html .= '<p class="appmz">共有<b>'.$list['count'].'</b>个应用</p>';
-		$html .= '<p class="applx">类型</p>';
-		$html .= '<p class="appcs">下载次数</p>';
-		$html .= '<p class="appkf">开发者</p>';
+		$html .= '<p class="appmz">Tổng cộng <b>'.$list['count'].'</b> ứng dụng</p>';
+		$html .= '<p class="applx">type</p>';
+		$html .= '<p class="appcs">lượt tải về</p>';
+		$html .= '<p class="appkf">deverloper</p>';
 		$html .= '</div>';
 		
 		$html .= '<ul>';
@@ -1173,7 +1173,7 @@ EOD;
 		if($list['totalPages'] > 1) {
 			$pageHtml = '';
 			if($pageId != 1) {
-				$pageHtml .= '<a href="javascript:void(0)" onclick="pageShow('.($pageId - 1).')">上一页</a>';
+				$pageHtml .= '<a href="javascript:void(0)" onclick="pageShow('.($pageId - 1).')">T.trước</a>';
 			}
 			
 			if($list['nowPage'] <= 3) {
@@ -1208,7 +1208,7 @@ EOD;
 			}
 
 			if($pageId != $list['totalPages']) {
-				$pageHtml .= '<a href="javascript:void(0)" onclick="pageShow('.($pageId + 1).')">下一页</a>';
+				$pageHtml .= '<a href="javascript:void(0)" onclick="pageShow('.($pageId + 1).')">T.Sau</a>';
 			}
 			
 			$html .= '<div class="page">'.$pageHtml.'</div>';
@@ -1225,13 +1225,13 @@ EOD;
     	foreach($data as $key => $value) {
     		switch($data['type']) {
     			case 1:
-    				$data['type'] = '风格模板';
+    				$data['type'] = 'Template';
     				break;
     			case 2:
-    				$data['type'] = '插件';
+    				$data['type'] = 'Plugin';
     				break;
     			case 3:
-    				$data['type'] = '应用';
+    				$data['type'] = 'App';
     				break;
     		}
     	}
@@ -1240,8 +1240,8 @@ EOD;
 		$html .= '<dt><img src="'.$data['logo'].'" style="width:64px; height:64px;" /></dt>';
 		$html .= '<dd class="la">';
 		$html .= '<p class="mingz">'.$data['title'].'</p>';
-		$html .= '<p class="fenl">类型：'.$data['type'].'</p>';
-		$html .= '<p class="zuoz">开发者：<a href="'.U('home/Space/index', array('uid'=>$data['uid'])).'">'.getUserName($data['uid']).'</a></p>';
+		$html .= '<p class="fenl">Type:'.$data['type'].'</p>';
+		$html .= '<p class="zuoz">Deverloper:<a href="'.U('home/Space/index', array('uid'=>$data['uid'])).'">'.getUserName($data['uid']).'</a></p>';
 		$html .= '</dd>';
 		$html .= '<dd class="lb">';
 		$attachUrl = U('home/Public/downloadWithDevelop', array('id'=>$data['develop_id']));
@@ -1249,7 +1249,7 @@ EOD;
 		$html .= '</dd>';
 		$html .= '</dl>';
 		$html .= '<div class="contentapptxt">';
-		$html .= '<h5>简介</h5>';
+		$html .= '<h5>Giới thiệu</h5>';
 		$html .= '<p>'.$data['explain'].'</p>';
 		$html .= '</div>';
 		
@@ -1266,7 +1266,7 @@ EOD;
             if(!$attach){
                 $this->error(L('attach_noexist'));
             }
-            if($data['status'] != DevelopModel::STATUS_PASS) $this->error('该扩展尚未通过审核，不允许下载');
+            if($data['status'] != DevelopModel::STATUS_PASS) $this->error('Extension này vẫn chưa được duyệt, không thể tải về');
 
             //下载函数
             require_cache('./addons/libs/Http.class.php');

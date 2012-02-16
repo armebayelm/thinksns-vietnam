@@ -43,7 +43,7 @@ $(document).ready(function(){
 		var callbackfun = _this.attr('callback');
 		var _comment_content = _this.find("textarea[name='comment_content']");
 		if( _comment_content.val()=='' ){
-			ui.error('内容不能为空');
+			ui.error('Nội dung không được để trống');
 			return false;
 		}
 		_this.find("input[type='submit']").val( '评论中...').attr('disabled','true') ;
@@ -127,7 +127,7 @@ weibo.prototype = {
 	before_publish:function(){
 		
 		if( $.trim( $('#content_publish').val() ) == '' ){
-            ui.error('内容不能为空');		
+            ui.error('Nội dung không được để trống');		
 			return false;
 		}
 		return true;

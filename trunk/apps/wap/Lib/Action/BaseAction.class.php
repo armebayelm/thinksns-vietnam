@@ -23,7 +23,7 @@ class BaseAction extends Action {
 		global $ts;
 
 		// 站点名称
-		$this->_title  = $ts['site']['site_name'] . ' WAP版';
+		$this->_title  = $ts['site']['site_name'] . ' phiên bản WAP';
 		$this->assign('site_name', $this->_title);
 
 		// 分页

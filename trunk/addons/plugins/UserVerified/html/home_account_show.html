@@ -111,9 +111,9 @@
 		$.post('{:Addons::createAddonUrl('UserVerified', 'home_account_do')}', {realname:realname,phone:phone,reason:reason,id:id},function(txt){
 			if( 1 == txt ){
 				$("#verified_tips").html('(成功提交资料，请等待认证。)');
-				ui.success('操作成功');
+				ui.success('Thực thi thao tác thành công');
 			}else{
-				ui.error('操作失败');
+				ui.error('Thực thi thao tác thất bại');
 			}
 			$btn_submit.removeAttr('disabled');			
 		});

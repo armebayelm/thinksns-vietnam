@@ -135,7 +135,7 @@ $CONFIG['location'] = 'msglist';
         
         $.post("{:U('home/Message/doDelete')}", {ids:ids}, function(res){
             if (res == '1') {
-                ui.success('删除成功');
+                ui.success('Đã xóa thành công');
                 ids = ids.split(',');
 				for(i = 0; i < ids.length; i++) {
 					$('#message_'+ids[i]).remove();

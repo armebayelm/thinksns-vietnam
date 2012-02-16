@@ -405,7 +405,7 @@ class AccountAction extends Action
 如果你错误地收到了此电子邮件，你无需执行任何操作来取消帐号！此帐号将不会启动。
 EOD;
 
-			if (service('Mail')->send_email($_POST['email'], "重置{$ts['site']['site_name']}帐号", $body)) {
+			if (service('Mail')->send_email($_POST['email'], "Khôi phục tài khoản tại {$ts['site']['site_name']}", $body)) {
 				echo '2';
 			}else {
 				echo '-4';
@@ -425,8 +425,8 @@ EOD;
 	    		$username = $_POST['username'];
 	    		$email = $_POST['email'];
 	    		$password = $_POST['password'];
-	    		if(uc_user_checkname($username) != 1 || !isLegalUsername($username) || M('user')->where("uname='{$username}' AND uid<>{$this->mid}")->count())$this->error('用户名不合法或已经存在，请重新设置用户名');
-	    		if(uc_user_checkemail($email) != 1 || M('user')->where("uname='{$email}' AND uid<>{$this->mid}")->count())$this->error('Email不合法或已经存在，请重新设置Email');
+	    		if(uc_user_checkname($username) != 1 || !isLegalUsername($username) || M('user')->where("uname='{$username}' AND uid<>{$this->mid}")->count())$this->error('Tên tài khoản không hợp lệ hoặc đã tồn tại, hãy nhập lại');
+	    		if(uc_user_checkemail($email) != 1 || M('user')->where("uname='{$email}' AND uid<>{$this->mid}")->count())$this->error('Email không hợp lệ hoặc đã tồn tại, hãy nhập lại');
 	    		global $ts;
 	    		if(md5($password) != $ts['user']['password'])$this->error(L('password_error_retype'));
 	    		$uc_uid = uc_user_register($username,$password,$email);

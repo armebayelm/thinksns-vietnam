@@ -81,9 +81,9 @@ class GlobalAction extends AdministratorAction {
 			//表情需要flush一下
 			model('Expression')->getAllExpression(true);
 			$this->assign('jumpUrl', U('admin/Global/siteopt'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 
@@ -122,9 +122,9 @@ class GlobalAction extends AdministratorAction {
 			$_LOG['ctime'] = time();
 			M('AdminLog')->add($_LOG);
 
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 
@@ -169,9 +169,9 @@ class GlobalAction extends AdministratorAction {
 			$user    = $model->query("ALTER TABLE {$db_prefix}credit_user ADD {$_POST['name']} INT(11) DEFAULT 0;");
 
 			$this->assign('jumpUrl', U('admin/Global/creditType'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 	public function doEditCreditType(){
@@ -202,9 +202,9 @@ class GlobalAction extends AdministratorAction {
 			$user    = $model->query("ALTER TABLE {$db_prefix}credit_user CHANGE {$oldName['name']} {$_POST['name']} INT(11);");
 
 			$this->assign('jumpUrl', U('admin/Global/creditType'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 	public function doDeleteCreditType(){
@@ -278,9 +278,9 @@ class GlobalAction extends AdministratorAction {
 		$res = M('credit_setting')->add($_POST);
 		if ($res) {
 			$this->assign('jumpUrl', U('admin/Global/credit'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 	public function editCredit() {
@@ -323,9 +323,9 @@ class GlobalAction extends AdministratorAction {
 		$res = M('credit_setting')->save($_POST);
 		if ($res) {
 			$this->assign('jumpUrl', U('admin/Global/credit'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 	public function doDeleteCredit() {
@@ -376,12 +376,12 @@ class GlobalAction extends AdministratorAction {
 		if($_POST['action'] == 'set'){//积分修改为
 			foreach($user as $v){
 				$setCredit->setUserCredit($v['uid'],$action,'reset');
-				if($setCredit->getInfo()===false)$this->error('保存失败');
+				if($setCredit->getInfo()===false)$this->error('Có lỗi phát sinh khi lưu');
 			}
 		}else{//增减积分
 			foreach($user as $v){
 				$setCredit->setUserCredit($v['uid'],$action);
-				if($setCredit->getInfo()===false)$this->error('保存失败');
+				if($setCredit->getInfo()===false)$this->error('Có lỗi phát sinh khi lưu');
 			}
 		}
 
@@ -403,7 +403,7 @@ class GlobalAction extends AdministratorAction {
 		$_LOG['ctime'] = time();
 		M('AdminLog')->add($_LOG);
 
-		$this->success('保存成功');
+		$this->success('Lưu lại thành công');
 	}
 
 	/** 系统配置 - 邀请配置 **/
@@ -470,7 +470,7 @@ class GlobalAction extends AdministratorAction {
 			F('_home_user_action_announcement', null);
 
 			$this->assign('jumpUrl', U('admin/Global/announcement'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
 			$announcement = model('Xdata')->lget('announcement');
 			$this->assign($announcement);
@@ -496,7 +496,7 @@ class GlobalAction extends AdministratorAction {
 			unset($_POST['__hash__']);
 			model('Xdata')->lput('email',$_POST);
 			$this->assign('jumpUrl', U('admin/Global/email'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else{
 			$email = model('Xdata')->lget('email');
 			$this->assign($email);
@@ -524,9 +524,9 @@ class GlobalAction extends AdministratorAction {
 			$_POST['attach_allow_extension'] = t($_POST['attach_allow_extension']);
 			$this->assign('jumpUrl', U('admin/Global/attachConfig'));
 			if ( model('Xdata')->lput('attach', $_POST) )
-				$this->success('保存成功');
+				$this->success('Lưu lại thành công');
 			else
-				$this->error('保存失败');
+				$this->error('Có lỗi phát sinh khi lưu');
 
 		}else {
 			$data = model('Xdata')->lget('attach');
@@ -607,9 +607,9 @@ class GlobalAction extends AdministratorAction {
 				M('document')->where("`document_id`=$res")->setField('display_order', $res);
 				$this->assign('jumpUrl', U('admin/Global/addDocument'));
 			}
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		} else {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}
 	}
 

@@ -60,7 +60,7 @@
       </dd>
     </dl>
     <div class="page_btm">
-      <input type="submit" class="btn_b" value="确定" />
+      <input type="submit" class="btn_b" value="OK!" />
     </div>
 	</form>
   </div>
@@ -120,9 +120,9 @@
 			<!--<a href="javascript:void(0);" onclick="changeDepartment({$vo['uid']});">转移部门</a>-->
 			<a href="{:U('admin/User/editUser', array('uid'=>$vo['uid']))}">编辑</a>
 			<if condition="0 == $vo['admin_level'] && $mid != $vo['uid']">
-	    		<a href="javascript:void(0);" onclick="deleteUser({$vo['uid']});">删除</a>
+	    		<a href="javascript:void(0);" onclick="deleteUser({$vo['uid']});">Xóa</a>
 			<else />
-				<span>删除</span>
+				<span>Xóa</span>
 	    	</if>
 		</td>
 	  </tr>

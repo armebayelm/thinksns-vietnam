@@ -8,7 +8,7 @@ function replaceComment( vo ){
             <li class=\"comlist\" id=\'comm"+vo.id+"\'>\
             <div class=\"left\" style=\"width: 65px;\"><span class=\"headpic50\"><a href=\"#\"><img src=\""+vo.face+"\" /></a></span></div>\
             <div style=\"margin-left: 65px;\">\
-            <div style=\"padding-bottom: 20px;\"><h3 class=\"tit_Critique lh25 mb5\"><span class=\"right f12px mr5\"><span><a  href=\"javascript:replay( \'"+vo.name+"\',"+vo.id+" )\">回复</a></span><span class=\"ml5\"><a href=\"###\" onclick=\"deleteComment( "+vo.id+","+vo.appid+" )\">删除</a></span></span><a href=\"#\">"+vo.name+"</a>   <em class=\"cGray2\">"+vo.cTime+"</em>"+quietly+"</h3>\
+            <div style=\"padding-bottom: 20px;\"><h3 class=\"tit_Critique lh25 mb5\"><span class=\"right f12px mr5\"><span><a  href=\"javascript:replay( \'"+vo.name+"\',"+vo.id+" )\">Trả lời</a></span><span class=\"ml5\"><a href=\"###\" onclick=\"deleteComment( "+vo.id+","+vo.appid+" )\">Xóa</a></span></span><a href=\"#\">"+vo.name+"</a>   <em class=\"cGray2\">"+vo.cTime+"</em>"+quietly+"</h3>\
               <p>"+vo.comment+"</p></div>"+sub+"</div></li>\
   "
   return result;
@@ -21,7 +21,7 @@ function subComment( vo ){
 <div class=\"sublist pt5 clear\" id=\"comm"+vo.id+"\">\
                   	<div style=\"width: 50px;\" class=\"left\"><span class=\"pic38\"><a href=\"#\"><img src=\""+vo.face+"\"/></a></span></div>\
           			<div style=\"margin-left:50px;\">\
-                      <h3 class=\"tit_Critique lh20 mb5\"><span class=\"right f12px mr5\"><a href=\"###\" onclick=\"deleteComment( "+vo.id+","+vo.appid+" )\">删除</a></span><a href=\"#\">"+vo.name+"</a>  <em class=\"cGray2\">"+vo.cTime+"</em> </h3>\
+                      <h3 class=\"tit_Critique lh20 mb5\"><span class=\"right f12px mr5\"><a href=\"###\" onclick=\"deleteComment( "+vo.id+","+vo.appid+" )\">Xóa</a></span><a href=\"#\">"+vo.name+"</a>  <em class=\"cGray2\">"+vo.cTime+"</em> </h3>\
                       <p>"+vo.comment+"</p>\
    			  		</div>\
                   </div>\
@@ -42,7 +42,7 @@ function deleteComment( id,appid ){
                     
                   }
                 }else{
-                  Alert( '删除失败' );
+                  Alert( 'Có lỗi phát sinh trong khi xóa' );
                   return;
                 }
             });

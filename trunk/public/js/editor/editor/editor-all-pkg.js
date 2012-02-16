@@ -13476,7 +13476,7 @@ KISSY.Editor.add("flash/support", function() {
         'target="_blank" ' +
         'href="#"></a> - '
         + ' <span class="ke-bubbleview-link ke-bubbleview-change">编辑</span> - '
-        + ' <span class="ke-bubbleview-link ke-bubbleview-remove">删除</span>';
+        + ' <span class="ke-bubbleview-link ke-bubbleview-remove">Xóa</span>';
 
     /**
      * 泡泡判断是否选择元素符合
@@ -15366,7 +15366,7 @@ KISSY.Editor.add("image", function(editor) {
         var tipHtml = ' '
             + ' <a class="ke-bubbleview-url" target="_blank" href="#"></a> - '
             + '    <span class="ke-bubbleview-link ke-bubbleview-change">编辑</span> - '
-            + '    <span class="ke-bubbleview-link ke-bubbleview-remove">删除</span>'
+            + '    <span class="ke-bubbleview-link ke-bubbleview-remove">Xóa</span>'
             + '';
         //重新采用form提交，不采用flash，国产浏览器很多问题
 

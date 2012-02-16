@@ -130,9 +130,9 @@ $.fn.userCard = function(options){
 		if( data['follow_state'] =='unfollow' ){
 			$('#space_card_toolbar').html('<span><a href="javascript:;" class="btn_b" onclick="space_card_dofollow(\'dofollow\','+uid+')">加关注</a></span>');
 		}else if(data['follow_state'] =='havefollow'){
-			$('#space_card_toolbar').html('<span>已关注 | <a href="javascript:;" onclick="space_card_dofollow(\'unflollow\','+uid+')">取消</a></span> <a href="javascript:void(0);" onclick="ui.sendmessage('+uid+');$(\'#space_card_content\').hide();">发私信</a>');
+			$('#space_card_toolbar').html('<span>已关注 | <a href="javascript:;" onclick="space_card_dofollow(\'unflollow\','+uid+')">取消</a></span> <a href="javascript:void(0);" onclick="ui.sendmessage('+uid+');$(\'#space_card_content\').hide();">Gửi tin nhắn</a>');
 		}else if(data['follow_state'] =='eachfollow'){
-			$('#space_card_toolbar').html('<span>互相关注 | <a href="javascript:;" onclick="space_card_dofollow(\'unflollow\','+uid+')">取消</a></span> <a href="javascript:void(0);" onclick="ui.sendmessage('+uid+');$(\'#space_card_content\').hide();">发私信</a>');
+			$('#space_card_toolbar').html('<span>互相关注 | <a href="javascript:;" onclick="space_card_dofollow(\'unflollow\','+uid+')">取消</a></span> <a href="javascript:void(0);" onclick="ui.sendmessage('+uid+');$(\'#space_card_content\').hide();">Gửi tin nhắn</a>');
 		}
 	}
 };
@@ -143,10 +143,10 @@ function space_card_dofollow(type,uid){
 	$('#space_card_toolbar').html( '<img src="'+ _THEME_+'/images/icon_waiting.gif" width="15">' );
 	$.post( U('weibo/Operate/follow') ,{uid:uid,type:type},function(txt){
 		if(txt=='12'){
-			$('#space_card_toolbar').html('<span>已关注 | <a href="javascript:;" onclick="space_card_dofollow(\'unflollow\','+uid+')">取消</a></span> <a href="javascript:void(0);" onclick="ui.sendmessage('+uid+');$(\'#space_card_content\').hide();">发私信</a>');
+			$('#space_card_toolbar').html('<span>已关注 | <a href="javascript:;" onclick="space_card_dofollow(\'unflollow\','+uid+')">取消</a></span> <a href="javascript:void(0);" onclick="ui.sendmessage('+uid+');$(\'#space_card_content\').hide();">Gửi tin nhắn</a>');
 			//userInfoList[uid]['follow_state'] = 'havefollow';
 		}else if(txt=='13'){
-			$('#space_card_toolbar').html('<span>互相关注 | <a href="javascript:;" onclick="space_card_dofollow(\'unflollow\','+uid+')">取消</a></span> <a href="javascript:void(0);" onclick="ui.sendmessage('+uid+');$(\'#space_card_content\').hide();">发私信</a>');
+			$('#space_card_toolbar').html('<span>互相关注 | <a href="javascript:;" onclick="space_card_dofollow(\'unflollow\','+uid+')">取消</a></span> <a href="javascript:void(0);" onclick="ui.sendmessage('+uid+');$(\'#space_card_content\').hide();">Gửi tin nhắn</a>');
 			//userInfoList[uid]['follow_state'] = 'eachfollow';
 		}else if(txt=='01'){
 			$('#space_card_toolbar').html('<span><a href="javascript:;" class="btn_b" onclick="space_card_dofollow(\'dofollow\','+uid+')">加关注</a></span>');

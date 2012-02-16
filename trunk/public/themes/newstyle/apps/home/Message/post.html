@@ -1,7 +1,7 @@
     <!--发送私信弹窗-->
     <dl class="pop_send_massage">
         <dd>
-            <label>收信人：</label>
+            <label>Người nhận:</label>
             <div class="pop_form_r">
                 <div style="width:283px;">{:W('SelectFriends',array('uid'=>$touid))}</div>
                  <!--<php>if($touid){</php>
@@ -14,7 +14,7 @@
             <div class="c"></div>
         </dd>
         <dd>
-            <label>内容：</label>
+            <label>Nội dung:</label>
             <div class="pop_form_r">
             <textarea style="width:280px; height:80px;" id="message_content" onblur="this.className='text'" onfocus="this.className='text2'" class="text"></textarea>
             </div>
@@ -22,9 +22,9 @@
         <dd>
         <label>
         &nbsp;
-        <!--<a href="javascript:void(0)" target_set="message_content" onclick="ui.emotions(this)" class="a52"><img class="icon_add_face_d" src="__THEME__/images/zw_img.gif" />表情</a>-->
+        <!--<a href="javascript:void(0)" target_set="message_content" onclick="ui.emotions(this)" class="a52"><img class="icon_add_face_d" src="__THEME__/images/zw_img.gif" />Smile</a>-->
         </label>
-    	<div class="pop_form_r"><input type="button" value="确定" class="btn_b" onclick="doPostMessage();" id="postbut"/></div>
+    	<div class="pop_form_r"><input type="button" value="OK!" class="btn_b" onclick="doPostMessage();" id="postbut"/></div>
         </dd>
     </dl>
     <!--发送私信弹窗-->
@@ -32,7 +32,7 @@
 function butstate(type){
 	if( type == 'open' ){
 		$('#postbut').attr('disabled','');
-		$('#postbut').val('提交');
+		$('#postbut').val('Submit');
 	}
 	if( type == 'close' ){
 		$('#postbut').attr('disabled','true');
@@ -45,35 +45,35 @@ function butstate(type){
         var message_title   = $('#message_title').val();
         var message_content = $('#message_content').val();
         if (message_to == "") {
-        	ui.error("请选择好友");
+        	ui.error("Vui lòng chọn bạn bè");
         	butstate('open');
         	return ;
         }
         if (message_title == "") {
-        	ui.error("请填写标题");
+        	ui.error("Vui lòng nhập tiêu đề");
         	butstate('open');
         	return ;
         }
         if (message_content == "") {
-        	ui.error("请填写内容");
+        	ui.error("Vui lòng nhập nội dung");
         	butstate('open');
         	return ;
         }
         $.post("{:U('home/Message/doPost')}", {to:message_to, title:message_title, content:message_content}, function(res){
         	if (res == '1') {
-                ui.success('发送成功');
+                ui.success('Gửi tin nhắn thành công');
                 if ('msglist' == $CONFIG.location) {
                 	setTimeout('location.reload()', 400);
                 }
                 ui.box.close();
             }else if(res == '-1') {
-            	ui.error('发信频率太快啦, 请10秒后重试');
+            	ui.error('Bạn gửi tin nhanh quá, vui lòng chờ 10 giây');
             	butstate('open');
             }else if(res == '-2') {
-            	ui.error('最多发送给10个人');
+            	ui.error('Gửi tối đa cho 10 người');
             	butstate('open');
             }else {
-                ui.error('发送失败');
+                ui.error('Có lỗi trong quá trình gửi tin nhắn');
                 butstate('open');
             }
         });

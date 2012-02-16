@@ -37,7 +37,7 @@
         </td>
         <td>
 			<a href="{:U('admin/Content/editAd',array('id'=>$vo['ad_id']))}">编辑</a>
-			<a href="javascript:void(0);" onclick="deleteAd('{$vo.ad_id}')">删除</a>
+			<a href="javascript:void(0);" onclick="deleteAd('{$vo.ad_id}')">Xóa</a>
 		</td>
       </tr>
   </volist>
@@ -108,7 +108,7 @@
     				ui.success('Đã xóa thành công');
     				removeItem(ids);
     			}else {
-    				ui.error('删除失败');
+    				ui.error('Có lỗi phát sinh trong khi xóa');
     			}
     		});
     	}
@@ -130,9 +130,9 @@
 				if(res == '1') {
 					//交换位置
 					direction == 'up' ? $('#'+ad_id).insertBefore('#'+baseid) : $("#"+ad_id).insertAfter('#'+baseid);
-					ui.success('保存成功');
+					ui.success('Lưu lại thành công');
 				}else {
-					ui.error('保存失败');
+					ui.error('Có lỗi phát sinh khi lưu');
 				}
 			});
 		}

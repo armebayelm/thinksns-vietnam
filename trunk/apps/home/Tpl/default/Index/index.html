@@ -19,13 +19,13 @@
 	<div class="header"><!-- 头部 begin -->
   <div class="logo"><a href="{:U('home')}">&nbsp;</a></div>
   <div class="nav_sub"> 
-  	<a href="{:U('home/Public/register')}">注册</a>&nbsp;┆&nbsp;
+  	<a href="{:U('home/Public/register')}">Đăng ký</a>&nbsp;┆&nbsp;
   	<gt name="mid" value="0">
-  		<a href="{:U('home/Public/logout')}">登出</a>&nbsp;┆&nbsp;
+  		<a href="{:U('home/Public/logout')}">Thoát</a>&nbsp;┆&nbsp;
   	<else/>
-  		<a href="{:U('home/Public/login')}">登录</a>&nbsp;┆&nbsp;
+  		<a href="{:U('home/Public/login')}">Đăng nhập</a>&nbsp;┆&nbsp;
   	</gt>
-  	<a href="__TS__/Information/help">帮助</a> 
+  	<a href="__TS__/Information/help">Trợ giúp</a> 
   </div>
   <div class="nav"><ul><li style="font-size:12px; color:#DEE4ED; padding-left:10px;"> 员工协作社区，提升企业群体智慧</li></ul></div>
 </div>
@@ -44,7 +44,7 @@
 		</script>
 	
 			<div class="login_box">
-			<h2>用户登录</h2>
+			<h2>Thành viên đăng nhập</h2>
 			<form action="{:U('home/Public/doLogin')}" method="post">
 	        <ul>
 	        <li>
@@ -65,12 +65,12 @@
 			<li><div class="c1">验证码：</div>
 	        <div class="c2">
 	        <div class="left"><input name="verify" type="text alM" class="text" id="textfield3" onfocus="this.className='text2'" onblur="this.className='text'" style="width:50px;" /></div>
-			 <a href="###" onclick="changeverify()"><img src="__TS__/Index/verify" id="verifyimg" alt="换一张" /></a>
+			 <a href="###" onclick="changeverify()"><img src="__TS__/Index/verify" id="verifyimg" alt="Đổi hình khác" /></a>
 			</div></li>
 	 		</eq>
 	
 			<li><div class="c1">&nbsp;</div><div class="c2"><input name="remember" type="checkbox" value="1" />下次自动登录</div></li>
-			 <li><div class="c1">&nbsp;</div><div class="c2"><input name="button" type="submit" class="btn_login hand" id="button" value="登 录" /></div></li>
+			 <li><div class="c1">&nbsp;</div><div class="c2"><input name="button" type="submit" class="btn_login hand" id="button" value="Đăng nhập" /></div></li>
 	         </ul>
 	         
 			</form>

@@ -107,7 +107,7 @@
 			    <div class="feed_c_btm"> 
 					<gt name="mid" value="0">
 					<span class="right">
-						<php>if( $vo['uid'] == $mid ){</php><a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除这条微博?')" callback="weibo.deleted({$vo.id})">删除</a>&nbsp;&nbsp;|&nbsp;&nbsp;<php>}</php>
+						<php>if( $vo['uid'] == $mid ){</php><a href="javascript:void(0)" onclick="ui.confirm(this,'Bạn có chắc bạn muốn xóa mblog này?')" callback="weibo.deleted({$vo.id})">Xóa</a>&nbsp;&nbsp;|&nbsp;&nbsp;<php>}</php>
 						<a href="javascript:void(0)" onclick="weibo.transpond({$vo.id})">转发({$vo.transpond})</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 						<php>if($vo['is_favorited']){</php>
 							<a href="javascript:void(0)" onclick="weibo.unFavorite({$vo.id},this)">已收藏</a>

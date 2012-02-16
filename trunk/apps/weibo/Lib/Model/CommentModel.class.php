@@ -41,7 +41,7 @@ class CommentModel extends Model {
             $return['html'] = '<div class="position_list" id="comment_list_c_'.$comment_id.'"> <a href="'.U('home/space/index',array('uid'=>$this->mid)).'" class="pic">
             		<img class="pic30" src="'.getUserFace($uid,'s').'" /></a>
                       <p class="list_c">' . getUserSpace($uid, 'fn', '', '{uname}') . getUserGroupIcon($uid) . ' : '.formatComment( $data['content'] ,true ).' (刚刚)</p>
-                      <div class="alR clear"><a href="javascript:void(0)" onclick="ui.confirm(this,\'确认要删除此评论?\')" callback="delComment('.$comment_id.')">删除</a>&nbsp;&nbsp;<a href="javascript:void(0)" onclick="reply(\''.getUserName($uid).'\','.$data['weibo_id'].')">回复</a></div>
+                      <div class="alR clear"><a href="javascript:void(0)" onclick="ui.confirm(this,\'确认要删除此评论?\')" callback="delComment('.$comment_id.')">Xóa</a>&nbsp;&nbsp;<a href="javascript:void(0)" onclick="reply(\''.getUserName($uid).'\','.$data['weibo_id'].')">Trả lời</a></div>
                     </div>';
             if( $post['transpond'] != 0 ){
             	if($miniInfo['transpond_id']!=0){

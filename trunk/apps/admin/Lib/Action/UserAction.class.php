@@ -176,7 +176,7 @@ class UserAction extends AdministratorAction {
 		S('UserGroupIds_'.$_POST['uid'],null);
 		
 		$this->assign('jumpUrl', U('admin/User/user'));
-		$this->success('保存成功');
+		$this->success('Lưu lại thành công');
     }
     
     //删除用户
@@ -373,9 +373,9 @@ class UserAction extends AdministratorAction {
 				$_LOG['ctime'] = time();
 				M('AdminLog')->add($_LOG);
     		}
-    		$this->success('发送成功');
+    		$this->success('Gửi tin nhắn thành công');
     	}else{
-    		$this->error('发送失败');
+    		$this->error('Có lỗi trong quá trình gửi tin nhắn');
     	}
     }
     
@@ -622,9 +622,9 @@ class UserAction extends AdministratorAction {
 		if ($res) {
 			//编辑时，跳转至节点列表页
 			$old_nid && $this->assign('jumpUrl', U('admin/User/node'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}else {
-    		$this->error('保存失败');
+    		$this->error('Có lỗi phát sinh khi lưu');
     	}
     }
     

@@ -42,7 +42,7 @@
       </dd>
     </dl>
     <div class="page_btm">
-      <input type="submit" class="btn_b" value="确定" />
+      <input type="submit" class="btn_b" value="OK!" />
     </div>
     </form>
   </div>
@@ -82,7 +82,7 @@
         <td>{$vo.title}</td>
         <td>{$vo.body}&nbsp;</td>
         <td>{$vo.ctime|date="Y-m-d H:i",###}</td>
-        <td><a href="javascript:void(0);" onclick="deleteRecord('{$vo.notify_id}')">删除</a></td>
+        <td><a href="javascript:void(0);" onclick="deleteRecord('{$vo.notify_id}')">Xóa</a></td>
       </tr>
   </volist>
   </table>
@@ -156,7 +156,7 @@
     				ui.success('Đã xóa thành công');
     				removeItem(ids);
     			}else {
-    				ui.error('删除失败');
+    				ui.error('Có lỗi phát sinh trong khi xóa');
     			}
     		});
     	}

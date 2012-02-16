@@ -99,7 +99,7 @@ weibo.prototype = {
 		var Interval;
 		$("#publish_type_content_before").prepend(
 			"<a href=\"javascript:void(0)\" target_set=\"content_publish\" onclick=\"ui.emotions(this)\" class=\"a52\">"
-			+ "<img class=\"icon_add_face_d\" src=\""+__THEME__+"/images/zw_img.gif\" />表情</a> "
+			+ "<img class=\"icon_add_face_d\" src=\""+__THEME__+"/images/zw_img.gif\" />Smile</a> "
 			+ "<a href=\"javascript:void(0)\" onclick=\"addtheme()\" class=\"a52\">"
 			+ "<img class=\"icon_add_topic_d\" src=\""+__THEME__+"/images/zw_img.gif\" />话题</a> "
 		);
@@ -192,7 +192,7 @@ weibo.prototype = {
 				$("#list_li_"+weibo_id).slideUp('fast');
 				weibo.downCount('weibo');
 			}else{
-				alert('删除失败');
+				alert('Có lỗi phát sinh trong khi xóa');
 			}
 		});
 	},

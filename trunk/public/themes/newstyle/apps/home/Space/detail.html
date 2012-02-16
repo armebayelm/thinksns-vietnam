@@ -64,7 +64,7 @@
             	<dt><em>共{$comment.count}条</em>评论</dt>
                 <dd><textarea class="message_text" id="comment_{$mini.weibo_id}" style="width:97.8%;min-width:97.8%;max-width:97.8%;min-height:55px;max-height:55px;height:55px;" name="comment_content" cols="" rows=""></textarea></dd>
                 <dd>
-                    <input type="submit" class="N_but right" value="确定">
+                    <input type="submit" class="N_but right" value="OK!">
                     <span><a class="faceicon1" href="javascript:void(0)" onclick="ui.emotions(this)" target_set="comment_{$mini.weibo_id}"></a></span>
                     <span><input type="checkbox" value="1" name="transpond" class="ck"><label>同时发一条微博</label></span>
 			        <if condition="$mini['transpond_id']">
@@ -91,11 +91,11 @@
 			    <div class="feed_c_btm"> 
 					<span class="right">
 						<php>if ($mid > 0 && ($vo['uid'] == $mid || $mini['uid'] == $mid)) {</php>
-						<a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除这条评论?')" callback="doDelComment({$vo.comment_id})">删除</a> |
+						<a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除这条评论?')" callback="doDelComment({$vo.comment_id})">Xóa</a> |
 						<php>}</php>
 						
 						<php>if($mid > 0 && $privacy['weibo_comment']){</php> 
-						 	<a href="javascript:void(0)" onclick="reply('{$vo.uid|getUserName}',{$vo.comment_id})">回复</a>
+						 	<a href="javascript:void(0)" onclick="reply('{$vo.uid|getUserName}',{$vo.comment_id})">Trả lời</a>
 						 <php>}</php>
 					</span> {$vo.content|formatComment=true}
 				</div>

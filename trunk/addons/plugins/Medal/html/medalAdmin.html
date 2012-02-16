@@ -15,7 +15,7 @@ function setStatus(id, status) {
 	$.post("{:Addons::adminUrl('doSetMedalStatus')}",{id:id,status:status},function(txt){
 		txt = eval('(' + txt + ')');
 		if('1' == txt['status']) {
-			ui.success('保存成功');
+			ui.success('Lưu lại thành công');
 			
 			var statusArray = new Array("关闭","开启");
 			$('#status_'+id).html("已"+statusArray[status]);
@@ -27,7 +27,7 @@ function setStatus(id, status) {
 			}
 			$('#setStatus_'+id).html(html);
 		}else {
-			ui.error('保存失败');
+			ui.error('Có lỗi phát sinh khi lưu');
 		}
 	});
 }
@@ -42,9 +42,9 @@ function move(id, direction) {
     		if('1' == txt['status']) {
                 //交换位置
                 direction == 'up' ? $('#'+id).insertBefore('#'+baseid) : $("#"+id).insertAfter('#'+baseid);
-                ui.success('保存成功');
+                ui.success('Lưu lại thành công');
             }else {
-                ui.error('保存失败');
+                ui.error('Có lỗi phát sinh khi lưu');
             }
         });
     }

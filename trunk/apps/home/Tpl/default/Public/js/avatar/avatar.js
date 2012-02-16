@@ -33,7 +33,7 @@ function buildAvatarEditor(pic_id,pic_path,post_type)
 	 * 提供给FLASH的接口：编辑头像保存成功后的回调方法
 	 */
 	function avatarSaved(){
-		alert('保存成功');
+		alert('Lưu lại thành công');
 		//window.location.href = '/profile.do';
 	}
 	

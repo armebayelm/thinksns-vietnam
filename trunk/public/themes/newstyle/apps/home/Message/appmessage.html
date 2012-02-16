@@ -6,12 +6,12 @@
     <div class="mainbox">
       <div class="mainbox_C no_r boxMessage">
         <div class="tab-menu">
-        	<a href="javascript:void(0)" onclick="ui.sendmessage();" class="btn_b right">发私信</a>
+        	<a href="javascript:void(0)" onclick="ui.sendmessage();" class="btn_b right">Gửi tin nhắn</a>
 			<include file="_tab" />
         </div>
         <div style="width:100%; overflow:hidden;">
           <php>if (empty($data)) {</php>
-              暂无应用消息
+              Hiện không có tin từ ứng dụng
           <php>}</php>
           <!--
           <div class="app_message_clew"><span class="right"><a href="#">忽略该应用的所有邀请</a></span>您有 1 个 忍者村 邀请</div>
@@ -41,7 +41,7 @@
 <script>
 	function manyou_add_userapp(hash, url){
         if (url) {
-            ui.success('正在跳转至应用...');
+            ui.success('Đang chuyển tới ứng dụng...');
         }
         setTimeout(function(){
 	        $.post( "{:U('home/Message/deleteMyInvite')}", {hash:hash}, function(res){
@@ -51,7 +51,7 @@
 	                    self.location.href = url;
 	                }else {
 	                    //忽略
-	                    ui.success('忽略成功');
+	                    ui.success('Bỏ qua thành công...');
 	                    $('#myinvite_'+hash).remove();
 	                }
 	            }else {

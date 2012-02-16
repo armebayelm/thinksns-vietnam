@@ -171,13 +171,13 @@ class AppsAction extends AdministratorAction {
 			$this->error('应用名称“'.$_POST['app_name'].'”已存在');
 		}
 		if ( ! $this->__updateApp('save') ) {
-			$this->error('保存失败');
+			$this->error('Có lỗi phát sinh khi lưu');
 		}else {
 			model('App')->unsetSiteDefaultApp();
 			model('App')->unsetUserInstalledApp($this->mid);
 			
 			$this->assign('jumpUrl', U('admin/Apps/applist'));
-			$this->success('保存成功');
+			$this->success('Lưu lại thành công');
 		}
 	}
 

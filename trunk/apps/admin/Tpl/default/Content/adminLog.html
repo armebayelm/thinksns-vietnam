@@ -29,13 +29,13 @@
       	<select name="type">
       		<option value="0">选择类型</option>
       		<option value="1">增加</option>
-      		<option value="2">删除</option>
+      		<option value="2">Xóa</option>
       		<option value="3">修改</option>
       	</select>
       </dd>
     </dl>
     <div class="page_btm">
-      <input type="submit" class="btn_b" value="确定" />
+      <input type="submit" class="btn_b" value="OK!" />
     </div>
     </form>
   </div>
@@ -84,7 +84,7 @@
         </php>
         </td>
         <td>{$vo.ctime|date="Y-m-d H:i",###}</td>
-        <td><a href="{:U('admin/Content/showAdminLog',array('id'=>$vo['id']))}" class="btn_a">查看详细</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0);" class="btn_a" onclick="deleteRecord({$vo.id});">删除</a></td>
+        <td><a href="{:U('admin/Content/showAdminLog',array('id'=>$vo['id']))}" class="btn_a">查看详细</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0);" class="btn_a" onclick="deleteRecord({$vo.id});">Xóa</a></td>
       </tr>
   </volist>
   </table>
@@ -162,7 +162,7 @@
     					removeItem(ids);
     				}
     			}else {
-    				ui.error('删除失败');
+    				ui.error('Có lỗi phát sinh trong khi xóa');
     			}
     		});
     	}

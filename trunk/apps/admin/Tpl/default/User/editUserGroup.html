@@ -16,9 +16,9 @@
 </dl>
 <div style="background:#F8F8F8; border-top:1px solid #E6E6E6; padding:5px;" class="alR">
   <php>if (isset($user_group)) {</php>
-  <input type="button" class="btn_b" onclick="editUserGrop()" value="确定" />
+  <input type="button" class="btn_b" onclick="editUserGrop()" value="OK!" />
   <php>}else {</php>
-  <input type="button" class="btn_b" onclick="addUserGrop()" value="确定" />
+  <input type="button" class="btn_b" onclick="addUserGrop()" value="OK!" />
   <php>}</php>
   <input type="button" class="btn_w" onclick="cancel()" value="取消" />
 </div>
@@ -44,7 +44,7 @@ function addUserGrop() {
 		//提交修改
 		$.post("{:U('admin/User/doAddUserGroup')}", {title:title,icon:icon}, function(res){
 			if (res == '0') {
-				ui.error('保存失败');
+				ui.error('Có lỗi phát sinh khi lưu');
             }else if (res == '-1') {
             	ui.error('用户组名已存在');
 			}else {
@@ -56,7 +56,7 @@ function addUserGrop() {
 				new_group_html += '<td><img src="'+themePath+icon+'"></td>';
 				new_group_html += '<td><php>echo date("Y-m-d H:i");</php></td>';
 				new_group_html += '<td><a href="javascript:void(0);" onclick="edit('+res+')">编辑</a> ';
-				new_group_html += '<a href="javascript:void(0);" onclick="del('+res+');">删除</a></td>';
+				new_group_html += '<a href="javascript:void(0);" onclick="del('+res+');">Xóa</a></td>';
 				new_group_html += '</tr>';
 				$('#user_group_list').append(new_group_html);
 				ui.success('添加成功');
@@ -94,13 +94,13 @@ function editUserGrop() {
 		//提交修改
 		$.post("{:U('admin/User/doEditUserGroup')}", {gid:gid, title:title,icon:icon}, function(res){
 			if (res == '0') {
-				ui.error('保存失败');
+				ui.error('Có lỗi phát sinh khi lưu');
 			}else if (res == '-1') {
 				ui.error('用户组名已存在');
 			}else {
 				$('#user_group_name_'+gid).html(title);
 				$('#user_group_icon_'+gid).html('<img src="'+themePath+icon+'">');
-				ui.success('保存成功');
+				ui.success('Lưu lại thành công');
 				ui.box.close();
 			}
 		});

@@ -10,7 +10,7 @@
           <h2>关注的话题</h2>
           <ul class="topic_list" rel="followTopicArea">
             <volist id="vo" name="followTopic">
-              <li onmouseover="$(this).find('.del').show()" onmouseout="$(this).find('.del').hide()"><a class="del right" style="display:none" title="删除" href="javascript:void(0)" onclick="weibo.deletedFollowTopic(this,'{$vo.name}')"></a><a href="{:U('home/user/topics',array('k'=>urlencode($vo['name'])))}" title="{$vo.name}">{$vo.name}</a></li>
+              <li onmouseover="$(this).find('.del').show()" onmouseout="$(this).find('.del').hide()"><a class="del right" style="display:none" title="Xóa" href="javascript:void(0)" onclick="weibo.deletedFollowTopic(this,'{$vo.name}')"></a><a href="{:U('home/user/topics',array('k'=>urlencode($vo['name'])))}" title="{$vo.name}">{$vo.name}</a></li>
             </volist>
           </ul>
           <div class="alR lh25"><a href="javascript:void(0)" onclick="$('.quick_win').show()">+添加</a></div>
@@ -43,7 +43,7 @@
         <ul class="feed_list">
         <php>if($type=='send'){</php>
         <li class="t"><span class="left" style="padding:0px 5px 0 6px;"><input onclick="checkAllReply(this)" type="checkbox" class="ck" /></span>
-        <a href="#">全选</a> | <a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除所选评论?')" callback="doDelete()">删除</a>
+        <a href="#">Chọn tất</a> | <a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除所选评论?')" callback="doDelete()">Xóa</a>
         </li>
         <php>}</php>
 <volist id="vo" name="list.data">
@@ -63,7 +63,7 @@
 					 回复 <space uid="vo.reply_uid">{uname}</space> 的评论: "{$vo.comment.content|formatComment=true}"
 				<php>}</php>
 				</div>
-                <div class="alR"><a href="{:U('home/Space/detail',array('id'=>$vo['weibo_id']))}">查看</a><span style="color:#666;"> | </span><a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除这条评论?')" callback="doDelete({$vo.comment_id})" >删除</a></div>
+                <div class="alR"><a href="{:U('home/Space/detail',array('id'=>$vo['weibo_id']))}">查看</a><span style="color:#666;"> | </span><a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除这条评论?')" callback="doDelete({$vo.comment_id})" >Xóa</a></div>
               </div>
             </li>
 	<php>}else{</php>
@@ -82,7 +82,7 @@
 					 回复我的评论: "{$vo.comment.content|formatComment=true}"
 				<php>}</php>
 				</div>
-                <div class="alR"><a href="{:U('home/Space/detail',array('id'=>$vo['weibo_id']))}">查看</a><span style="color:#666;"> | </span><a href="javascript:void(0)" rel="comment_reply" callback="dosuccess" uname="{$vo.uid|getUserName}" commentid="{$vo.comment_id}" minid="{$vo.mini.id}">回复</a></div>
+                <div class="alR"><a href="{:U('home/Space/detail',array('id'=>$vo['weibo_id']))}">查看</a><span style="color:#666;"> | </span><a href="javascript:void(0)" rel="comment_reply" callback="dosuccess" uname="{$vo.uid|getUserName}" commentid="{$vo.comment_id}" minid="{$vo.mini.id}">Trả lời</a></div>
                 <div id="comment_list_{$vo.comment_id}"></div>
               </div>
             </li>
@@ -100,7 +100,7 @@
                 <div class="feed_c_btm"> 
                     来自{$vo.type|getAppAlias}: <a href="{$vo.data.url}">{$vo.data.title}</a>
                 </div>
-                <div class="alR"><a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除这条评论?')" callback="doDelete({$vo.id})" >删除</a></div>
+                <div class="alR"><a href="javascript:void(0)" onclick="ui.confirm(this,'确认要删除这条评论?')" callback="doDelete({$vo.id})" >Xóa</a></div>
               </div>
             </li>
     <php>}else{</php>
@@ -114,7 +114,7 @@
                 <div class="feed_c_btm"> 
                     来自{$vo.type|getAppAlias}: <a href="{$vo.data.url}">{$vo.data.title}</a>
                 </div>
-                <div class="alR"><a href="javascript:void(0)" rel="comment_reply" callback="dosuccess" commentid="{$vo.id}" >回复</a></div>
+                <div class="alR"><a href="javascript:void(0)" rel="comment_reply" callback="dosuccess" commentid="{$vo.id}" >Trả lời</a></div>
                 <div id="comment_list_{$vo.id}"></div>
               </div>
             </li>
@@ -124,7 +124,7 @@
 </volist>
 <php>if($type=='send'){</php>
            <li class="t"><span class="left" style="padding:0px 5px 0 6px;"><input onclick="checkAllReply(this)" type="checkbox" class="ck" /></span>
-        <a href="#">全选</a> | <a href="javascript:void(0)" onclick="doDelete()">删除</a>
+        <a href="#">Chọn tất</a> | <a href="javascript:void(0)" onclick="doDelete()">Xóa</a>
         </li>
         <php>}</php>
         </ul>

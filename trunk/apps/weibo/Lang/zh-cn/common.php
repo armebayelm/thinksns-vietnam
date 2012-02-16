@@ -10,7 +10,7 @@ return array (
    'email_exist' => '邮箱已存在',
    'bind_failed' => '绑定失败',
    'del_success' => 'Đã xóa thành công',
-   'del_failed' => '删除失败',
+   'del_failed' => 'Có lỗi phát sinh trong khi xóa',
    'arg_number_only' => '参数必须为数字',
    'no_grouping' => '未分组',
    '' => '',

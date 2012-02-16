@@ -339,7 +339,7 @@ if(typeof giant.ui === 'undefined')
                 addUser:function(fUid, name, image) {
                         var $this = this;
                         if( parseInt( $("#ui_fri_num").html() )<=0 ){
-                        	ui.error('最多发送给10个人');
+                        	ui.error('Gửi tối đa cho 10 người');
                         	return ;
                         }
                         //如果当前用户不存在

@@ -33,16 +33,16 @@ $(document).ready(function(){
 	        </div>
             <eq name="login_verify_on" value="1">
             <div class="frm" style="height:29px;*height:auto;"><input name="verify" type="text" class="text alM" title="验证码" id="verify" style="width:50px;height:22px;padding:0 3px;" value="" />
-              &nbsp;<a href="javascript:void(0);" onclick="changeverify()"><img src="{:U('home/Public/verify')}" id="verifyimg" alt="换一张" class="alM" /></a></div>
+              &nbsp;<a href="javascript:void(0);" onclick="changeverify()"><img src="{:U('home/Public/verify')}" id="verifyimg" alt="Đổi hình khác" class="alM" /></a></div>
             </eq>
           <div class="frm">
 	          <label>
 	            <input name="remember" type="checkbox" value="1" />
-	            记住登录状态</label>
-	          <a class="fuc0" href="{:U('home/Public/sendPassword')}">忘记密码？</a>
+	            Ghi nhớ tôi</label>
+	          <a class="fuc0" href="{:U('home/Public/sendPassword')}">Bạn quên mật khẩu?</a>
           </div>
 	        
-	        <div class="frm" style="margin:0px auto; padding:0px; width:85px"><input type="submit" value="登 录" class="logbtn hand" /> </div>
+	        <div class="frm" style="margin:0px auto; padding:0px; width:85px"><input type="submit" value="Đăng nhập" class="logbtn hand" /> </div>
         </form>
         {:Addons::hook('login_input_footer',array('regInfo'=>$regInfo))}
     </div>
@@ -51,7 +51,7 @@ $(document).ready(function(){
 <div class="login_main">
   <div class="colL">
     <div class="tit">
-      <h3>图片微博</h3>
+      <h3>Hình ảnh nổi bật</h3>
     </div>
     <div class="imgrot" id="tw_img_scroll">
       <div id="slides">
@@ -73,7 +73,7 @@ $(document).ready(function(){
    
     <div class="mobi">
       <div class="tit">
-        <h3>用手机上微博</h3>
+        <h3>Mạng xã hội trên nền điện thoại</h3>
       </div>
       <p class="lh30 cGray2">手机访问 <a href="http://t.thinksns.com/wap" target="_blank">http://t.thinksns.com/wap</a></p>
       <p>

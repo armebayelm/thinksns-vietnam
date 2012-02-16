@@ -3,7 +3,7 @@
 </div>
 {:W('SelectUserGroup',array('user_group_id'=>$user_group))}
 <div class="page_btm">
-	<input type="button" class="btn_b" onclick="doSetPopedom(this)" value="确定" />
+	<input type="button" class="btn_b" onclick="doSetPopedom(this)" value="OK!" />
 	<input type="button" class="btn_w" onclick="cancel(this)" value="取消" />
 </div>
 
@@ -22,10 +22,10 @@ function doSetPopedom(_this) {
 	$.post("{:U('admin/User/doSetPopedom')}", {gid:gid, nid:nid}, function(res){
 		if(res == '1') {
 			ui.box.close();
-			ui.success('保存成功');
+			ui.success('Lưu lại thành công');
 		}else {
 			ui.box.close();
-			ui.error('保存失败');
+			ui.error('Có lỗi phát sinh khi lưu');
 		}
 	});
 }

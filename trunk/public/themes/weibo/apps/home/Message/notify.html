@@ -24,7 +24,7 @@
           </dl>
           <ul class="topic_list" rel="followTopicArea">
             <volist id="vo" name="followTopic">
-              <li onmouseover="$(this).find('.del').show()" onmouseout="$(this).find('.del').hide()"><a class="del right" style="display:none" title="删除" href="javascript:void(0)" onclick="deleteFollowTopic(this,'{$vo.topic_id}')"></a><a href="{:U('home/user/topics',array('k'=>urlencode($vo['name'])))}" title="{$vo.name}">{$vo.name}</a></li>
+              <li onmouseover="$(this).find('.del').show()" onmouseout="$(this).find('.del').hide()"><a class="del right" style="display:none" title="Xóa" href="javascript:void(0)" onclick="deleteFollowTopic(this,'{$vo.topic_id}')"></a><a href="{:U('home/user/topics',array('k'=>urlencode($vo['name'])))}" title="{$vo.name}">{$vo.name}</a></li>
             </volist>
           </ul>
         </div>
@@ -47,7 +47,7 @@
   <!--wrap_index_r end-->
   <div class="wrap_index_l">
       <div class="tab-menu">
-       	  <a href="javascript:void(0)" onclick="ui.sendmessage();" class="btn_b right">发私信</a>
+       	  <a href="javascript:void(0)" onclick="ui.sendmessage();" class="btn_b right">Gửi tin nhắn</a>
 		  <include file="_tab" />
       </div>
       <div style=" overflow: hidden">
@@ -59,7 +59,7 @@
                 <h3>
                   <div class="right alR" style="line-height:20px">
                     <div class="left"><em>{$vo.ctime|friendlyDate}</em></div>
-                    <div class="left"><a style="margin-top: 2px" class="del" href="javascript:deleteNotify({$vo.notify_id})" title="删除"></a></div>
+                    <div class="left"><a style="margin-top: 2px" class="del" href="javascript:deleteNotify({$vo.notify_id})" title="Xóa"></a></div>
                   </div>
                   <span class="lh20 f12px">{$vo.title}</span></h3>
                 <div class="feed_c_btm">
@@ -77,7 +77,7 @@
                       <input type="hidden" id="replyid_450" name="reply_comment_id" value="450">    	
                       <a target_set="comment_450" onclick="ui.emotions(this)" href="javascript:void(0)" class="faceicon1"></a>
                       <textarea id="comment_450" style="overflow: hidden; height: 15px;" rows="1" name="comment_content" class="left text"></textarea>
-                      <input type="submit" style="" value="确定" class="N_but">
+                      <input type="submit" style="" value="OK!" class="N_but">
                     </form>
                     </div>
                     <div class="c"></div>
@@ -104,7 +104,7 @@
 					$(this).remove();
  				}); 
 			}else{
-				alert('删除失败');
+				alert('Có lỗi phát sinh trong khi xóa');
 			}
 		});
 	}
